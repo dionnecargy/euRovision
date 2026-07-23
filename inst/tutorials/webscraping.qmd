@@ -1,0 +1,392 @@
+---
+title: "Eurovision Webscraper"
+format: html
+---
+
+```{r setup, message=FALSE, warning=FALSE}
+install.packages(c("rvest", "polite", "tidyverse", "janitor", "httr", "glue"))
+
+library(rvest)
+library(polite)
+library(tidyverse)
+library(janitor)
+library(httr)
+library(glue)
+library(here)
+```
+
+## Constants & Utilities
+
+```{r constants}
+BASE_URL  <- "https://en.wikipedia.org/wiki/Eurovision_Song_Contest_{year}"
+ALL_YEARS <- setdiff(1956:2026, 2020)
+
+# Safe null-coalescing row count — avoids %||% version issues entirely
+safe_nrow <- function(x) if (is.null(x) || nrow(x) == 0) 0L else nrow(x)
+
+# Strip footnote markers like [a], [1], [note 1] and collapse whitespace
+clean_text <- function(x) {
+  x |>
+    str_remove_all("\\[\\s*[\\w\\s]+\\s*\\]") |>
+    str_squish()
+}
+```
+
+## Session Builder
+
+```{r session}
+make_session <- function(year) {
+  url <- glue(BASE_URL, .open = "{", .close = "}")
+  tryCatch(
+    polite::bow(
+      url,
+      user_agent = "EurovisionScraper/1.0 (educational research project)",
+      delay      = 1.5
+    ),
+    error = function(e) {
+      message(glue("  [ERROR] Could not connect to {year}: {e$message}"))
+      NULL
+    }
+  )
+}
+```
+
+## Core Table Parser
+
+```{r parser}
+parse_wiki_table <- function(table_node, year, label) {
+  tryCatch({
+    df <- table_node |>
+      html_table(fill = TRUE, header = TRUE) |>
+      as_tibble(.name_repair = "unique") |>
+      mutate(across(everything(), as.character)) |>
+      mutate(across(everything(), clean_text)) |>
+      janitor::clean_names()
+
+    # Drop fully empty rows and columns
+    df <- df |>
+      filter(if_any(everything(), ~ !is.na(.x) & .x != "")) |>
+      select(where(~ any(!is.na(.x) & .x != "")))
+
+    if (nrow(df) == 0) return(NULL)
+
+    df |> mutate(year = year, table_label = label, .before = 1)
+
+  }, error = function(e) {
+    message(glue("  [WARN] parse failed '{label}' ({year}): {e$message}"))
+    NULL
+  })
+}
+```
+
+## Flat-Node Section Table Finder
+
+```{r finder}
+# ── KEY FIX ───────────────────────────────────────────────────────────────────
+# Instead of walking XML siblings (which breaks across Wikipedia's varying
+# page structures), we:
+#   1. Select ALL nodes of interest in document order using a single XPath
+#   2. Iterate through them linearly, tracking which heading we are "under"
+#   3. Collect tables that fall under a matching heading
+# This is robust to any nesting structure Wikipedia uses.
+# ─────────────────────────────────────────────────────────────────────────────
+
+find_section_tables <- function(page_html, keywords) {
+
+  # Pull every heading and wikitable in document order
+  # XPath union preserves document order in xml2
+  all_nodes <- page_html |>
+    html_elements("h2, h3, h4, table")
+
+  results          <- list()
+  current_heading  <- NULL   # text of the heading we are currently under
+  current_level    <- 99L    # numeric level (2, 3, 4) of that heading
+  under_match      <- FALSE  # are we currently under a matching heading?
+
+  for (node in all_nodes) {
+    tag <- node |> html_name()
+
+    # ── If this node is a heading ──────────────────────────────────────────
+    if (tag %in% c("h2", "h3", "h4")) {
+      level <- tag |> str_extract("[0-9]") |> as.integer()
+      text  <- node |> html_text(trim = TRUE)
+      lower <- str_to_lower(text)
+
+      # A same-or-higher heading closes the current section
+      if (level <= current_level) {
+        under_match     <- FALSE
+        current_heading <- NULL
+        current_level   <- 99L
+      }
+
+      # Check if this heading matches any keyword
+      if (any(str_detect(lower, str_to_lower(keywords)))) {
+        current_heading <- text
+        current_level   <- level
+        under_match     <- TRUE
+      }
+
+      next  # headings themselves are never tables
+    }
+
+    # ── If this node is a table and we are under a matching heading ────────
+    if (tag == "table" && under_match) {
+      classes <- node |> html_attr("class")
+      if (!is.na(classes) && str_detect(classes, "wikitable")) {
+        # Use heading text + index to allow multiple tables per section
+        key <- paste0(current_heading, " [", length(results) + 1, "]")
+        results[[key]] <- node
+      }
+    }
+  }
+
+  results
+}
+```
+
+## Extraction Functions
+
+```{r extraction}
+# ── Host City ──────────────────────────────────────────────────────────────────
+extract_host_city <- function(page_html, year) {
+  city  <- NA_character_
+  venue <- NA_character_
+
+  # ── Strategy 1: infobox ─────────────────────────────────────────────────
+  infobox <- page_html |> html_element("table.infobox")
+
+  if (length(infobox) > 0 && !is.na(infobox)) {
+    rows <- infobox |> html_elements("tr")
+
+    for (row in rows) {
+      th <- row |> html_element("th")
+      td <- row |> html_element("td")
+
+      if (length(th) == 0 || length(td) == 0) next
+      if (is.na(html_text(th)) || is.na(html_text(td))) next
+
+      th_text <- str_to_lower(html_text(th, trim = TRUE))
+
+      if (str_detect(th_text, "venue")) {
+        # The venue <td> contains:
+        #   Line 1: Venue name  (e.g. "Teatro Kursaal")
+        #   Line 2: City, Country (e.g. "Lugano, Switzerland")
+        # These are separated by a <br> or <a> tags — we extract
+        # the raw text nodes individually using xml2 [1]
+        raw_lines <- td |>
+          html_children() |>                      # get child nodes
+          map_chr(~ html_text(.x, trim = TRUE)) |> # text of each child
+          discard(~ .x == "")                      # drop blanks
+
+        if (length(raw_lines) >= 2) {
+          # Multi-line: first part = venue, last part = city
+          venue <- clean_text(raw_lines[1])
+          city  <- clean_text(raw_lines[length(raw_lines)])
+        } else {
+          # Single line fallback — try splitting on comma logic
+          full  <- clean_text(html_text(td, trim = TRUE))
+          # Insert separator where venue ends and city begins:
+          # matches a lowercase letter immediately before an uppercase
+          split <- str_match(full, "^(.*[a-z])([A-Z].*)$")
+          if (!is.na(split[1, 2])) {
+            venue <- str_squish(split[1, 2])
+            city  <- str_squish(split[1, 3])
+          } else {
+            city <- full
+          }
+        }
+        break
+      }
+
+      # Fallback label: "Host city" (used on some older pages)
+      if (str_detect(th_text, "host city")) {
+        city <- clean_text(html_text(td, trim = TRUE))
+        break
+      }
+    }
+  }
+
+  # ── Strategy 2: any <th> labelled "Host city" ───────────────────────────
+  if (is.na(city)) {
+    for (th in page_html |> html_elements("th")) {
+      if (str_detect(str_to_lower(html_text(th, trim = TRUE)), "host city")) {
+        td <- th |> html_element(xpath = "following-sibling::td[1]")
+        if (length(td) > 0 && !is.na(td)) {
+          city <- clean_text(html_text(td, trim = TRUE))
+          break
+        }
+      }
+    }
+  }
+
+  # ── Strategy 3: regex on lead paragraph ─────────────────────────────────
+  if (is.na(city)) {
+    lead <- page_html |>
+      html_element("div.mw-parser-output p") |>
+      html_text()
+    if (!is.na(lead)) {
+      m <- str_match(lead, "held (?:in|at) ([A-Z][a-zA-Z\\s\\-]+),")
+      if (!is.na(m[1, 2])) city <- str_squish(m[1, 2])
+    }
+  }
+
+  tibble(
+    year      = year,
+    venue     = replace_na(venue, "Unknown"),
+    host_city = replace_na(city,  "Unknown")
+  )
+}
+
+# ── Participants ───────────────────────────────────────────────────────────────
+extract_participants <- function(page_html, year) {
+  keywords <- c("participating countr", "countries", "participant", "entr")
+  tbls     <- find_section_tables(page_html, keywords)
+  frames   <- compact(imap(tbls, ~ parse_wiki_table(.x, year,
+                                   paste("participants |", .y))))
+
+  # Fallback: first wikitable on the page
+  if (length(frames) == 0) {
+    tbl <- page_html |> html_element("table.wikitable")
+    if (length(tbl) > 0 && !is.na(tbl)) {
+      df <- parse_wiki_table(tbl, year, "participants | fallback")
+      if (!is.null(df)) frames <- list(df)
+    }
+  }
+
+  if (length(frames) == 0) return(NULL)
+  bind_rows(frames)
+}
+
+
+# ── Results (semi-finals + grand final) ───────────────────────────────────────
+extract_results <- function(page_html, year) {
+  keywords <- c("semi-final", "semifinal", "grand final", "final",
+                "result", "scoreboard", "voting", "detailed")
+  tbls     <- find_section_tables(page_html, keywords)
+  frames   <- compact(imap(tbls, ~ parse_wiki_table(.x, year,
+                                   paste("results |", .y))))
+
+  # Fallback: all wikitables
+  if (length(frames) == 0) {
+    all_tbls <- page_html |> html_elements("table.wikitable")
+    frames   <- compact(imap(seq_along(all_tbls), ~ parse_wiki_table(
+      all_tbls[[.x]], year, paste("results | table", .x)
+    )))
+  }
+
+  if (length(frames) == 0) return(NULL)
+  bind_rows(frames)
+}
+
+
+# ── Broadcasts ─────────────────────────────────────────────────────────────────
+extract_broadcasts <- function(page_html, year) {
+  keywords <- c("broadcast", "broadcaster", "television", "relay", "coverage")
+  tbls     <- find_section_tables(page_html, keywords)
+  frames   <- compact(imap(tbls, ~ parse_wiki_table(.x, year,
+                                   paste("broadcasts |", .y))))
+
+  if (length(frames) == 0) return(NULL)
+  bind_rows(frames)
+}
+```
+
+## Main Scraping Loop
+
+```{r scrape, message=FALSE, warning=FALSE}
+scrape_all_eurovision <- function() {
+
+  # Dynamic named lists — no pre-allocation, no index gaps
+  host_city_list    <- list()
+  participants_list <- list()
+  results_list      <- list()
+  broadcasts_list   <- list()
+
+  total <- length(ALL_YEARS)
+
+  for (i in seq_along(ALL_YEARS)) {
+    year   <- ALL_YEARS[i]
+    yr_key <- as.character(year)
+    cat(sprintf("[%2d/%d] Scraping %d ... ", i, total, year))
+
+    # Build session
+    session <- make_session(year)
+    if (is.null(session)) { cat("SKIPPED (session)\n"); next }
+
+    # Fetch page
+    page_html <- tryCatch(
+      polite::scrape(session),
+      error = function(e) {
+        message(glue("  [ERROR] {year}: {e$message}")); NULL
+      }
+    )
+    if (is.null(page_html)) { cat("SKIPPED (scrape)\n"); next }
+
+    # Extract — each wrapped in its own tryCatch so one failure
+    # never kills the whole loop
+    hc <- tryCatch(extract_host_city(page_html, year),
+                   error = function(e) {
+                     message(glue("  [WARN] host_city {year}: {e$message}"))
+                     NULL })
+
+    pp <- tryCatch(extract_participants(page_html, year),
+                   error = function(e) {
+                     message(glue("  [WARN] participants {year}: {e$message}"))
+                     NULL })
+
+    rs <- tryCatch(extract_results(page_html, year),
+                   error = function(e) {
+                     message(glue("  [WARN] results {year}: {e$message}"))
+                     NULL })
+
+    bc <- tryCatch(extract_broadcasts(page_html, year),
+                   error = function(e) {
+                     message(glue("  [WARN] broadcasts {year}: {e$message}"))
+                     NULL })
+
+    # Store by named key — skipped years simply have no entry
+    host_city_list[[yr_key]]    <- hc
+    participants_list[[yr_key]] <- pp
+    results_list[[yr_key]]      <- rs
+    broadcasts_list[[yr_key]]   <- bc
+
+    cat(sprintf("OK  (p=%d, r=%d, b=%d)\n",
+                safe_nrow(pp), safe_nrow(rs), safe_nrow(bc)))
+
+    Sys.sleep(0.5)
+  }
+
+  list(
+    host_cities  = bind_rows(compact(host_city_list)),
+    participants = bind_rows(compact(participants_list)),
+    results      = bind_rows(compact(results_list)),
+    broadcasts   = bind_rows(compact(broadcasts_list))
+  )
+}
+
+cat("Starting Eurovision Wikipedia scraper...\n\n")
+eurovision_data <- scrape_all_eurovision()
+```
+
+## Preview & Save
+
+```{r save}
+cat("\n── Host Cities ───────────────────────────────────────────────────\n")
+print(eurovision_data$host_cities, n = Inf)
+
+cat("\n── Participants (first 5 rows) ───────────────────────────────────\n")
+print(head(eurovision_data$participants, 5))
+
+cat("\n── Results (first 5 rows) ────────────────────────────────────────\n")
+print(head(eurovision_data$results, 5))
+
+cat("\n── Broadcasts (first 5 rows) ─────────────────────────────────────\n")
+print(head(eurovision_data$broadcasts, 5))
+
+write_csv(eurovision_data$host_cities,  here("inst/extdata/eurovision_host_cities.csv"))
+write_csv(eurovision_data$participants, here("inst/extdata/eurovision_participants.csv"))
+write_csv(eurovision_data$results,      here("inst/extdata/eurovision_results.csv"))
+write_csv(eurovision_data$broadcasts,   here("inst/extdata/eurovision_broadcasts.csv"))
+
+cat("\nAll files saved.\n")
+```

@@ -1,0 +1,298 @@
+---
+title: "data_wrangling"
+format: html
+---
+
+```{r}
+library(tidyverse)
+library(here)
+library(janitor)
+
+host_cities   <- read_csv(here("inst/extdata/eurovision_host_cities.csv"))
+participants  <- read_csv(
+  here("inst/extdata/eurovision_participants.csv"),
+  show_col_types = FALSE,
+  col_types       = cols(.default = col_character())
+)
+results       <- read_csv(here("inst/extdata/eurovision_results.csv"))
+broadcasts    <- read_csv(here("inst/extdata/eurovision_broadcasts.csv"))
+```
+
+# Inspect Host Cities df
+
+Manual inspection and edits 
+
+```{r}
+host_cities <- host_cities %>% 
+  mutate(
+    venue = case_when(
+      year == 1965 ~ "Sala di Concerto della RAI",
+      .default = venue
+    ),
+    host_city = case_when(
+      year == 1965 ~ "Naples, Italy",
+      year == 1974 ~ "Brighton, United Kingdom",
+      year == 2010 ~ "Oslo, Norway",
+      year == 2013 ~ "Malmö, Sweden",
+      .default = host_city
+    )
+  )
+
+# rewrite over 
+write_csv(host_cities, here("inst/extdata/eurovision_host_cities.csv"))
+```
+ 
+# Inspect Participants df 
+
+Claude assistance for wrangling code
+
+## Contest Format 
+
+```{r}
+# ── Contest Format Reference Data Frame ───────────────────────────────────────
+# Built from historical knowledge of Eurovision format changes [1][2][6]
+
+df_contest_format <- tibble(
+  year = setdiff(1956:2026, 2020)
+) |>
+  mutate(
+    format = case_when(
+
+      # ── Grand Final only ────────────────────────────────────────────────────
+      year %in% 1956:1992 ~ "Grand Final only",
+
+      # ── Relegation / qualifier era ──────────────────────────────────────────
+      # 1993: first relegation qualifier round introduced
+      year == 1993        ~ "Relegation qualifier + Grand Final",
+
+      # 1994–1995: formal relegation rule — bottom countries sat out
+      year %in% 1994:1995 ~ "Relegation rule + Grand Final",
+
+      # 1996: all countries participated in a qualifier round
+      year == 1996        ~ "Open qualifier round + Grand Final",
+
+      # 1997–2003: rolling points window determined automatic qualifiers
+      year %in% 1997:2003 ~ "Rolling points relegation + Grand Final",
+
+      # ── Semi-final era ───────────────────────────────────────────────────────
+      # 2004–2007: one semi-final introduced
+      year %in% 2004:2007 ~ "One semi-final + Grand Final",
+
+      # 2008–present: two semi-finals
+      year %in% 2008:2026 ~ "Two semi-finals + Grand Final",
+
+      TRUE                ~ "Unknown"
+    ),
+
+    # ── Numeric flags for easy filtering ──────────────────────────────────────
+    has_grand_final    = TRUE,
+    has_semi_final_1   = year >= 2004,
+    has_semi_final_2   = year >= 2008,
+    has_relegation     = year %in% 1993:2003,
+
+    # ── Number of live shows ──────────────────────────────────────────────────
+    n_live_shows = case_when(
+      year %in% 1956:2003 ~ 1L,
+      year %in% 2004:2007 ~ 2L,
+      year >= 2008        ~ 3L
+    )
+  )
+
+# ── Preview ───────────────────────────────────────────────────────────────────
+print(df_contest_format, n = Inf)
+
+# ── Summary count by format ───────────────────────────────────────────────────
+cat("\n── Contests per format ──────────────────────────────────────────────────\n")
+df_contest_format |>
+  count(format, sort = FALSE) |>
+  print()
+
+# ── Save ──────────────────────────────────────────────────────────────────────
+write_csv(df_contest_format, here("inst/extdata/eurovision_contest_format.csv"))
+```
+
+## Participants df
+
+```{r}
+# ── Post-processing: Split participants into two clean data frames ─────────────
+raw <- participants
+
+# ── Replace all NA-like strings with true NA ──────────────────────────────────
+na_strings <- c("NA", "", "N/A", "–", "—")
+
+clean_na <- function(df) {
+  df |>
+    mutate(across(
+      everything(),
+      ~ if_else(.x %in% na_strings, NA_character_, .x)
+    ))
+}
+
+raw <- clean_na(raw)
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# DATA FRAME 1 — Participant Info (year → conductor)
+# ═══════════════════════════════════════════════════════════════════════════════
+
+df_participants_info <- raw |>
+
+  filter(str_detect(table_label, "Participants \\[1\\]")) |>
+
+  select(year, country, broadcaster, artist, song, language,
+         songwriter_s, conductor, language_s) |>
+
+  mutate(language = coalesce(language, language_s)) |>
+  select(-language_s) |>
+
+  mutate(
+    song = str_remove_all(song, '^"+|"+$'),
+    song = str_squish(song)
+  ) |>
+
+  filter(!(is.na(artist) & is.na(song))) |>
+
+  mutate(year = as.integer(year)) |>
+
+  arrange(year, country)
+
+cat(sprintf("df_participants_info: %d rows × %d cols\n",
+            nrow(df_participants_info), ncol(df_participants_info)))
+glimpse(df_participants_info)
+
+# rewrite 
+write_csv(df_participants_info, here("inst/extdata/eurovision_participants.csv"))
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# DATA FRAME 2 — Semi-final Results (2004 onwards)
+# Source: eurovision_data$results, filtered to semi-final sections only
+# ═══════════════════════════════════════════════════════════════════════════════
+
+# ── Apply same NA cleaning to results ─────────────────────────────────────────
+results_clean <- results |>
+  mutate(across(where(is.character), ~ if_else(.x %in% na_strings, NA_character_, .x)))
+
+df_semifinal_results <- results_clean |>
+
+  # ── Keep only semi-final years ─────────────────────────────────────────────
+  filter(as.integer(year) >= 2004, as.integer(year) != 2020) |>
+
+  # ── Keep only semi-final section tables ───────────────────────────────────
+  # Exclude "Semi-final allocation draw" (the pot draw table)
+  # Keep only labels matching "Semi-final" but NOT "allocation"
+  filter(str_detect(table_label, regex("semi-final", ignore_case = TRUE))) |>
+  filter(!str_detect(table_label, regex("allocation", ignore_case = TRUE))) |>
+
+  # ── Keep only the FIRST table per semi-final section per year ─────────────
+  # The first table (lowest index number in the label) is the results table.
+  # Later tables with higher indices are the detailed voting breakdowns.
+  # We extract the index number and keep only the minimum per year + section.
+  mutate(
+    # Extract the section name without the index: e.g. "Semi-final 1"
+    section = str_extract(table_label, "Semi-final(?: \\d)?"),
+    section = str_squish(section),
+    # Extract the numeric index from the label e.g. [2] → 2
+    tbl_index = as.integer(str_extract(table_label, "(?<=\\[)\\d+(?=\\])"))
+  ) |>
+
+  # Keep only the lowest-indexed table per year + section
+  group_by(year, section) |>
+  filter(tbl_index == min(tbl_index)) |>
+  ungroup() |>
+
+  # ── Drop the first NA row (Wikipedia table header artefact) ───────────────
+  filter(!is.na(country)) |>
+
+  # ── Select and clean core columns ─────────────────────────────────────────
+  mutate(
+    # Normalise section name: "Semi-final" → "Semi-final 1" for 2004–2007
+    semi_final = if_else(
+      section == "Semi-final",
+      "Semi-final 1",
+      section
+    ),
+    year = as.integer(year),
+
+    # Clean song titles
+    song  = str_remove_all(song, '^"+|"+$'),
+    song  = str_squish(song),
+
+    # Strip footnote markers from country
+    country = str_remove_all(country, "[‡†\\*]"),
+    country = str_squish(country),
+
+    # r_o is running order (draw position); place and points are results
+    running_order = suppressWarnings(as.integer(r_o)),
+    place         = suppressWarnings(as.integer(place)),
+    points        = suppressWarnings(as.numeric(points)),
+
+    # Qualified: top 10 advance from each semi-final
+    qualified = case_when(
+      !is.na(place) & place <= 10L ~ TRUE,
+      !is.na(place) & place >  10L ~ FALSE,
+      TRUE                         ~ NA
+    ),
+
+    # Format label
+    format = if_else(
+      year %in% 2004:2007,
+      "One semi-final + Grand Final",
+      "Two semi-finals + Grand Final"
+    )
+  ) |>
+
+  select(
+    year,
+    format,
+    semi_final,
+    running_order,
+    country,
+    artist,
+    song,
+    language,
+    place,
+    points,
+    qualified
+  ) |>
+
+  arrange(year, semi_final, place)
+
+cat(sprintf("df_semifinal_results: %d rows × %d cols\n",
+            nrow(df_semifinal_results), ncol(df_semifinal_results)))
+glimpse(df_semifinal_results)
+
+# ── Sanity checks ──────────────────────────────────────────────────────────────
+
+cat("\n── Semi-finals per year ─────────────────────────────────────────────────\n")
+df_semifinal_results |>
+  distinct(year, semi_final) |>
+  count(year, name = "n_semis") |>
+  print(n = Inf)
+
+cat("\n── 2004 semi-final results ───────────────────────────────────────────────\n")
+df_semifinal_results |>
+  filter(year == 2004) |>
+  select(country, running_order, place, points, qualified) |>
+  print(n = Inf)
+
+cat("\n── 2008 semi-final 1 results ─────────────────────────────────────────────\n")
+df_semifinal_results |>
+  filter(year == 2008, semi_final == "Semi-final 1") |>
+  select(country, running_order, place, points, qualified) |>
+  print(n = Inf)
+
+# ── Save ───────────────────────────────────────────────────────────────────────
+write_csv(df_semifinal_results, here("inst/extdata/eurovision_semifinal_results.csv"))
+cat("\nSaved: eurovision_semifinal_results.csv\n")
+```
+
+
+# Inspect Results df 
+
+use claude to help remove the semi results from the final results etc 
+
+also identify the number each country votes for another country ? 
+
+```{r}
+results
+```
+

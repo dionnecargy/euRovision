@@ -1,0 +1,683 @@
+year,format,semi_final,running_order,country,artist,song,language,place,points,qualified
+2004,One semi-final + Grand Final,Semi-final 1,20,Serbia and Montenegro,Željko Joksimović and Ad-Hoc Orchestra,Lane moje,NA,1,263,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,11,Ukraine,Ruslana,Wild Dances,NA,2,256,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,10,Greece,Sakis Rouvas,Shake It,NA,3,238,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,13,Albania,Anjeza Shahini,The Image of You,NA,4,167,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,14,Cyprus,Lisa Andreas,Stronger Every Minute,NA,5,149,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,22,Netherlands,Re-union,Without You,NA,6,146,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,21,Bosnia and Herzegovina,Deen,In the Disco,NA,7,133,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,8,Malta,Julie and Ludwig,On Again... Off Again,NA,8,74,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,18,Croatia,Ivan Mikulić,You Are the Only One,NA,9,72,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,15,Macedonia,Toše Proeski,Life,NA,10,71,TRUE
+2004,One semi-final + Grand Final,Semi-final 1,5,Israel,David D'Or,Leha'amin,NA,11,57,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,17,Estonia,Neiokõsõ,Tii,NA,11,57,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,19,Denmark,Tomas Thordarson,Shame on You,NA,13,56,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,1,Finland,Jari Sillanpää,Takes 2 to Tango,NA,14,51,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,7,Portugal,Sofia Vitória,Foi magia,NA,15,38,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,12,Lithuania,Linas and Simona,What's Happened to Your Love,NA,16,26,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,4,Latvia,Fomins and Kleins,Dziesma par laimi,NA,17,23,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,6,Andorra,Marta Roure,Jugarem a estimar-nos,NA,18,12,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,2,Belarus,Aleksandra and Konstantin,My Galileo,NA,19,10,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,9,Monaco,Maryon,Notre planète,NA,19,10,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,16,Slovenia,Platin,Stay Forever,NA,21,5,FALSE
+2004,One semi-final + Grand Final,Semi-final 1,3,Switzerland,Piero and the MusicStars,Celebrate,NA,22,0,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,14,Romania,Luminița Anghel and Sistem,Let Me Try,NA,1,235,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,4,Moldova,Zdob și Zdub,Boonika bate doba,NA,2,207,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,24,Denmark,Jakob Sveistrup,Talking to You,NA,3,185,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,20,Croatia,Boris Novković feat. Lado members,Vukovi umiru sami,NA,4,169,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,15,Hungary,Nox,"Forogj, világ",NA,5,167,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,13,Norway,Wig Wam,In My Dreams,NA,6,164,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,7,Israel,Shiri Maimon,HaSheket SheNish'ar,NA,7,158,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,19,Switzerland,Vanilla Ninja,Cool Vibes,NA,8,114,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,17,Macedonia,Martin Vučić,Make My Day,NA,9,97,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,5,Latvia,Walters and Kazha,The War Is Not Over,NA,10,85,TRUE
+2005,One semi-final + Grand Final,Semi-final 1,25,Poland,Ivan and Delfin,Czarna dziewczyna,NA,11,81,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,23,Slovenia,Omar Naber,Stop,NA,12,69,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,8,Belarus,Angelica Agurbash,Love Me Tonight,NA,13,67,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,9,Netherlands,Glennis Grace,My Impossible Dream,NA,14,53,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,22,Ireland,Donna and Joe,Love?,NA,14,53,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,10,Iceland,Selma,If I Had Your Love,NA,16,52,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,3,Portugal,2B,Amar,NA,17,51,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,16,Finland,Geir Rönning,Why,NA,18,50,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,21,Bulgaria,Kaffe,Lorraine,NA,19,49,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,12,Estonia,Suntribe,Let's Get Loud,NA,20,31,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,1,Austria,Global.Kryner,Y así,NA,21,30,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,11,Belgium,Nuno Resende,Le Grand Soir,NA,22,29,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,18,Andorra,Marian van de Wal,La mirada interior,NA,23,27,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,6,Monaco,Lise Darly,Tout de moi,NA,24,22,FALSE
+2005,One semi-final + Grand Final,Semi-final 1,2,Lithuania,Laura and the Lovers,Little by Little,NA,25,17,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,16,Finland,Lordi,Hard Rock Hallelujah,NA,1,292,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,22,Bosnia and Herzegovina,Hari Mata Hari,Lejla,NA,2,267,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,13,Russia,Dima Bilan,Never Let You Go,NA,3,217,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,20,Sweden,Carola,Invincible,NA,4,214,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,18,Lithuania,LT United,We Are the Winners,NA,5,163,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,1,Armenia,André,Without Your Love,NA,6,150,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,15,Ukraine,Tina Karol,Show Me Your Love,NA,7,146,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,14,Turkey,Sibel Tüzün,Süper Star,NA,8,91,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,8,Ireland,Brian Kennedy,Every Song Is a Cry for Love,NA,9,79,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,11,Macedonia,Elena Risteska,Ninanajna,NA,10,76,TRUE
+2006,One semi-final + Grand Final,Semi-final 1,12,Poland,Ich Troje,Follow My Heart,NA,11,70,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,7,Belgium,Kate Ryan,Je t'adore,NA,12,69,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,23,Iceland,Silvía Night,Congratulations,NA,13,62,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,6,Albania,Luiz Ejlli,Zjarr e ftohtë,NA,14,58,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,9,Cyprus,Annet Artani,Why Angels Cry,NA,15,57,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,3,Slovenia,Anžej Dežan,Mr Nobody,NA,16,49,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,2,Bulgaria,Mariana Popova,Let Me Cry,NA,17,36,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,21,Estonia,Sandra,Through My Window,NA,18,28,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,19,Portugal,Nonstop,Coisas de nada,NA,19,26,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,17,Netherlands,Treble,Amambanda,NA,20,22,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,10,Monaco,Séverine Ferrer,La Coco-Dance,NA,21,14,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,5,Belarus,Polina Smolova,Mum,NA,22,10,FALSE
+2006,One semi-final + Grand Final,Semi-final 1,4,Andorra,Jenny,Sense tu,NA,23,8,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,15,Serbia,Marija Šerifović,Molitva,NA,1,298,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,22,Hungary,Magdi Rúzsa,Unsubstantial Blues,NA,2,224,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,26,Turkey,Kenan Doğulu,Shake It Up Şekerim,NA,3,197,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,4,Belarus,Koldun,Work Your Magic,NA,4,176,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,28,Latvia,Bonaparti.lv,Questa notte,NA,5,168,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,1,Bulgaria,Elitsa Todorova and Stoyan Yankoulov,Water,NA,6,146,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,25,Slovenia,Alenka Gotar,Cvet z juga,NA,7,140,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,6,Georgia,Sopho,Visionary Dream,NA,8,123,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,18,Macedonia,Karolina,Mojot svet,NA,9,97,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,9,Moldova,Natalia Barbu,Fight,NA,10,91,TRUE
+2007,One semi-final + Grand Final,Semi-final 1,17,Portugal,Sabrina,Dança comigo,NA,11,88,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,21,Andorra,Anonymous,Salvem el món,NA,12,80,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,5,Iceland,Eiríkur Hauksson,Valentine Lost,NA,13,77,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,14,Poland,The Jet Set,Time to Party,NA,14,75,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,3,Cyprus,Evridiki,"Comme ci, comme ça",NA,15,65,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,13,Croatia,Dragonfly feat. Dado Topić,Vjerujem u ljubav,NA,16,54,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,11,Albania,Frederik Ndoci,Hear My Plea,NA,17,49,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,19,Norway,Guri Schanke,Ven a bailar conmigo,NA,18,48,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,12,Denmark,DQ,Drama Queen,NA,19,45,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,8,Switzerland,DJ BoBo,Vampires Are Alive,NA,20,40,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,10,Netherlands,Edsilia Rombley,On Top of the World,NA,21,38,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,7,Montenegro,Stevan Faddy,"'Ajde, kroči",NA,22,33,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,23,Estonia,Gerli Padar,Partners in Crime,NA,22,33,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,2,Israel,Teapacks,Push the Button,NA,24,17,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,20,Malta,Olivia Lewis,Vertigo,NA,25,15,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,24,Belgium,The KMG's,LovePower,NA,26,14,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,27,Austria,Eric Papilaya,Get a Life – Get Alive,NA,27,4,FALSE
+2007,One semi-final + Grand Final,Semi-final 1,16,Czech Republic,Kabát,Malá dáma,NA,28,1,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,19,Greece,Kalomira,Secret Combination,NA,1,156,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,14,Armenia,Sirusho,"Qélé, Qélé",NA,2,139,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,18,Russia,Dima Bilan,Believe,NA,3,135,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,9,Norway,Maria,Hold On Be Strong,NA,4,106,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,2,Israel,Boaz,The Fire in Your Eyes,NA,5,104,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,7,Azerbaijan,Elnur and Samir,Day After Day,NA,6,96,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,17,Romania,Nico and Vlad,Pe-o margine de lume,NA,7,94,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,16,Finland,Teräsbetoni,Missä miehet ratsastaa,NA,8,79,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,13,Bosnia and Herzegovina,Laka,Pokušaj,NA,9,72,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 1,4,Moldova,Geta Burlacu,A Century of Love,NA,11,36,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,8,Slovenia,Rebeka Dremelj,Vrag naj vzame,NA,11,36,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,15,Netherlands,Hind,Your Heart Belongs to Me,NA,13,27,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,1,Montenegro,Stefan Filipović,Zauvijek volim te,NA,14,23,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,11,Ireland,Dustin the Turkey,Irelande Douze Pointe,NA,15,22,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,12,Andorra,Gisela,Casanova,NA,16,22,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,6,Belgium,Ishtar,O Julissi,NA,17,16,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,3,Estonia,Kreisiraadio,Leto svet,NA,18,8,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,5,San Marino,Miodio,Complice,NA,19,5,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 1,10,Poland,Isis Gee,For Life,NA,NA,42,NA
+2008,Two semi-finals + Grand Final,Semi-final 2,4,Ukraine,Ani Lorak,Shady Lady,NA,1,152,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,19,Portugal,Vânia Fernandes,Senhora do mar (negras águas),NA,2,120,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,11,Croatia,Kraljevi ulice and 75 Cents,Romanca,NA,3,112,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,13,Denmark,Simon Mathew,All Night Long,NA,3,112,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,14,Georgia,Diana Gurtskaya,Peace Will Come,NA,5,107,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,10,Latvia,Pirates of the Sea,Wolves of the Sea,NA,6,86,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,3,Turkey,Mor ve Ötesi,Deli,NA,7,85,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,1,Iceland,Euroband,This Is My Life,NA,8,68,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,6,Albania,Olta Boka,Zemrën e lamë peng,NA,9,67,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,18,Macedonia,"Tamara, Vrčak and Adrijan",Let Me Love You,NA,10,64,TRUE
+2008,Two semi-finals + Grand Final,Semi-final 2,12,Bulgaria,Deep Zone and Balthazar,"DJ, Take Me Away",NA,11,56,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 2,7,Switzerland,Paolo Meneguzzi,Era stupendo,NA,13,47,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 2,16,Malta,Morena,Vodka,NA,14,38,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 2,17,Cyprus,Evdokia Kadi,Femme Fatale,NA,15,36,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 2,5,Lithuania,Jeronimas Milius,Nomads in the Night,NA,16,30,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 2,9,Belarus,Ruslan Alehno,Hasta la vista,NA,17,27,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 2,8,Czech Republic,Tereza Kerndlová,Have Some Fun,NA,18,9,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 2,15,Hungary,Csézy,Candlelight,NA,19,6,FALSE
+2008,Two semi-finals + Grand Final,Semi-final 2,2,Sweden,Charlotte Perrelli,Hero,NA,NA,54,NA
+2009,Two semi-finals + Grand Final,Semi-final 1,12,Iceland,Yohanna,Is It True?,NA,1,174,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,9,Turkey,Hadise,Düm Tek Tek,NA,2,172,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,18,Bosnia and Herzegovina,Regina,Bistra voda,NA,3,125,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,5,Sweden,Malena Ernman,La Voix,NA,4,105,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,6,Armenia,Inga and Anush,Jan Jan,NA,5,99,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,17,Malta,Chiara,What If We,NA,6,86,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,10,Israel,Noa and Mira Awad,There Must Be Another Way,NA,7,75,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,16,Portugal,Flor-de-Lis,Todas as ruas do amor,NA,8,70,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,14,Romania,Elena,The Balkan Girls,NA,9,67,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,13,Macedonia,Next Time,Nešto što kje ostane,NA,10,45,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 1,1,Montenegro,Andrea Demirović,Just Get Out of My Life,NA,11,44,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 1,4,Belarus,Petr Elfimov,Eyes That Never Lie,NA,13,25,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 1,8,Switzerland,Lovebugs,The Highest Heights,NA,14,15,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 1,7,Andorra,Susanne Georgi,La teva decisió (Get a Life),NA,15,8,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 1,11,Bulgaria,Krassimir Avramov,Illusion,NA,16,7,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 1,3,Belgium,Copycat,Copycat,NA,17,1,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 1,2,Czech Republic,Gipsy.cz,Aven Romale,NA,18,0,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 1,15,Finland,Waldo's People,Lose Control,NA,NA,42,NA
+2009,Two semi-finals + Grand Final,Semi-final 2,6,Norway,Alexander Rybak,Fairytale,NA,1,201,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,12,Azerbaijan,Aysel and Arash,Always,NA,2,180,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,18,Estonia,Urban Symphony,Rändajad,NA,3,115,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,13,Greece,Sakis Rouvas,This Is Our Night,NA,4,110,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,15,Moldova,Nelly Ciobanu,Hora din Moldova,NA,5,106,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,17,Ukraine,Svetlana Loboda,Be My Valentine! (Anti-Crisis Girl),NA,6,80,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,16,Albania,Kejsi Tola,Carry Me in Your Dreams,NA,7,73,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,9,Denmark,Brinck,Believe Again,NA,8,69,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,14,Lithuania,Sasha Son,Love,NA,9,66,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,4,Serbia,Marko Kon and Milaan,Cipela,NA,10,60,TRUE
+2009,Two semi-finals + Grand Final,Semi-final 2,2,Ireland,Sinéad Mulvey and Black Daisy,Et Cetera,NA,11,52,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 2,5,Poland,Lidia Kopania,I Don't Wanna Leave,NA,12,43,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 2,7,Cyprus,Christina Metaxa,Firefly,NA,14,32,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 2,11,Hungary,Zoli Ádok,Dance with Me,NA,15,16,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 2,10,Slovenia,Quartissimo feat. Martina,Love Symphony,NA,16,14,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 2,19,Netherlands,The Toppers,Shine,NA,17,11,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 2,8,Slovakia,Kamil Mikulčík and Nela Pocisková,Leť tmou,NA,18,8,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 2,3,Latvia,Intars Busulis,Probka,NA,19,7,FALSE
+2009,Two semi-finals + Grand Final,Semi-final 2,1,Croatia,Igor Cukrovfeat. Andrea,Lijepa Tena,NA,NA,33,NA
+2010,Two semi-finals + Grand Final,Semi-final 1,10,Belgium,Tom Dice,Me and My Guitar,NA,1,167,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,13,Greece,Giorgos Alkaios and Friends,Opa,NA,2,133,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,17,Iceland,Hera Björk,Je ne sais quoi,NA,3,123,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,14,Portugal,Filipa Azevedo,Há dias assim,NA,4,89,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,7,Serbia,Milan Stanković,Ovo je Balkan,NA,5,79,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,12,Albania,Juliana Pasha,It's All About You,NA,6,76,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,2,Russia,Peter Nalitch and Friends,Lost and Forgotten,NA,7,74,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,8,Bosnia and Herzegovina,Vukašin Brajić,Thunder and Lightning,NA,8,59,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,16,Belarus,3+2 feat. Robert Wells,Butterflies,NA,9,59,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,1,Moldova,SunStroke Project and Olia Tira,Run Away,NA,10,52,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 1,5,Finland,Kuunkuiskaajat,Työlki ellää,NA,11,49,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 1,11,Malta,Thea Garrett,My Dream,NA,12,45,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 1,9,Poland,Marcin Mroziński,Legenda,NA,13,44,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 1,3,Estonia,Malcolm Lincoln,Siren,NA,14,39,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 1,15,Macedonia,Gjoko Taneski,Jas ja imam silata,NA,15,37,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 1,4,Slovakia,Kristína,Horehronie,NA,16,24,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 1,6,Latvia,Aisha,What For?,NA,17,11,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 2,17,Turkey,Manga,We Could Be the Same,NA,1,118,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,7,Azerbaijan,Safura,Drip Drop,NA,2,113,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,16,Georgia,Sofia Nizharadze,Shine,NA,3,106,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,10,Romania,Paula Seling and Ovi,Playing with Fire,NA,4,104,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,4,Denmark,Chanée and N'evergreen,In a Moment like This,NA,5,101,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,2,Armenia,Eva Rivas,Apricot Stone,NA,6,83,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,8,Ukraine,Alyosha,Sweet People,NA,7,77,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,3,Israel,Harel Skaat,Milim,NA,8,71,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,12,Ireland,Niamh Kavanagh,It's for You,NA,9,67,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,14,Cyprus,Jon Lilygreen and the Islanders,Life Looks Better in Spring,NA,10,67,TRUE
+2010,Two semi-finals + Grand Final,Semi-final 2,6,Sweden,Anna Bergendahl,This Is My Life,NA,11,62,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 2,1,Lithuania,InCulto,Eastern European Funk,NA,12,44,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 2,15,Croatia,Feminnem,Lako je sve,NA,13,33,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 2,9,Netherlands,Sieneke,Ik ben verliefd (Sha-la-lie),NA,14,29,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 2,13,Bulgaria,Miro,Angel si ti,NA,15,19,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 2,11,Slovenia,Ansambel Žlindra and Kalamari,Narodnozabavni rock,NA,16,6,FALSE
+2010,Two semi-finals + Grand Final,Semi-final 2,5,Switzerland,Michael von der Heide,Il pleut de l'or,NA,17,2,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,19,Greece,Loukas Yorkasfeat. Stereo Mike,Watch My Dance,NA,1,133,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,18,Azerbaijan,Ell and Nikki,Running Scared,NA,2,122,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,10,Finland,Paradise Oskar,Da Da Dam,NA,3,103,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,14,Iceland,Sjonni's Friends,Coming Home,NA,4,100,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,17,Lithuania,Evelina Sašenko,C'est ma vie,NA,5,81,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,9,Georgia,Eldrine,One More Day,NA,6,74,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,15,Hungary,Kati Wolf,What About My Dreams?,NA,7,72,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,6,Serbia,Nina,Čaroban,NA,8,67,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,7,Russia,Alexey Vorobyov,Get You,NA,9,64,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,8,Switzerland,Anna Rossinelli,In Love for a While,NA,10,55,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 1,11,Malta,Glen Vella,One Life,NA,11,54,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,4,Armenia,Emmy,Boom Boom,NA,12,54,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,5,Turkey,Yüksek Sadakat,Live It Up,NA,13,47,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,3,Albania,Aurela Gaçe,Feel the Passion,NA,14,47,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,13,Croatia,Daria,Celebrate,NA,15,41,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,12,San Marino,Senit,Stand By,NA,16,34,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,2,Norway,Stella Mwangi,Haba Haba,NA,17,30,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,16,Portugal,Homens da Luta,A luta é alegria,NA,18,22,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 1,1,Poland,Magdalena Tul,Jestem,NA,19,18,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,8,Sweden,Eric Saade,Popular,NA,1,155,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,18,Denmark,A Friend in London,New Tomorrow,NA,2,135,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,13,Slovenia,Maja Keuc,No One,NA,3,112,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,14,Romania,Hotel FM,Change,NA,4,111,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,1,Bosnia and Herzegovina,Dino Merlin,Love in Rewind,NA,5,109,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,6,Ukraine,Mika Newton,Angel,NA,6,81,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,2,Austria,Nadine Beiler,The Secret Is Love,NA,7,69,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,19,Ireland,Jedward,Lipstick,NA,8,68,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,15,Estonia,Getter Jaani,Rockefeller Street,NA,9,60,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,7,Moldova,Zdob și Zdub,So Lucky,NA,10,54,TRUE
+2011,Two semi-finals + Grand Final,Semi-final 2,4,Belgium,Witloof Bay,With Love Baby,NA,11,53,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,10,Bulgaria,Poli Genova,Na inat,NA,12,48,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,5,Slovakia,Twiins,I'm Still Alive,NA,13,48,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,16,Belarus,Anastasia Vinnikova,I Love Belarus,NA,14,45,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,12,Israel,Dana International,Ding Dong,NA,15,38,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,11,Macedonia,Vlatko Ilievski,Rusinka,NA,16,36,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,17,Latvia,Musiqq,Angel in Disguise,NA,17,25,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,9,Cyprus,Christos Mylordos,San aggelos s'agapisa,NA,18,16,FALSE
+2011,Two semi-finals + Grand Final,Semi-final 2,3,Netherlands,3JS,Never Alone,NA,19,13,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 1,14,Russia,Buranovskiye Babushki,Party for Everybody,NA,1,152,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,5,Albania,Rona Nishliu,Suus,NA,2,146,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,6,Romania,Mandinga,Zaleilah,NA,3,120,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,3,Greece,Eleftheria Eleftheriou,Aphrodisiac,NA,4,116,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,17,Moldova,Pasha Parfeny,Lăutar,NA,5,100,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,18,Ireland,Jedward,Waterline,NA,6,92,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,12,Cyprus,Ivi Adamou,La La Love,NA,7,91,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,2,Iceland,Greta Salóme and Jónsi,Never Forget,NA,8,75,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,13,Denmark,Soluna Samay,Should've Known Better,NA,9,63,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,15,Hungary,Compact Disco,Sound of Our Hearts,NA,10,52,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 1,7,Switzerland,Sinplus,Unbreakable,NA,11,45,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 1,9,Finland,Pernilla,När jag blundar,NA,12,41,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 1,10,Israel,Izabo,Time,NA,13,33,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 1,11,San Marino,Valentina Monetta,The Social Network Song (Oh Oh – Uh – Oh Oh),NA,14,31,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 1,1,Montenegro,Rambo Amadeus,Euro Neuro,NA,15,20,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 1,4,Latvia,Anmary,Beautiful Song,NA,16,17,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 1,8,Belgium,Iris,Would You?,NA,17,16,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 1,16,Austria,Trackshittaz,Woki mit deim Popo,NA,18,8,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 2,11,Sweden,Loreen,Euphoria,NA,1,181,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,1,Serbia,Željko Joksimović,Nije ljubav stvar,NA,2,159,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,18,Lithuania,Donny Montell,Love Is Blind,NA,3,104,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,14,Estonia,Ott Lepland,Kuula,NA,4,100,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,13,Turkey,Can Bonomo,Love Me Back,NA,5,80,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,17,Bosnia and Herzegovina,Maya Sar,Korake ti znam,NA,6,77,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,4,Malta,Kurt Calleja,This Is the Night,NA,7,70,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,7,Ukraine,Gaitana,Be My Guest,NA,8,64,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,2,Macedonia,Kaliopi,Crno i belo,NA,9,53,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,16,Norway,Tooji,Stay,NA,10,45,TRUE
+2012,Two semi-finals + Grand Final,Semi-final 2,8,Bulgaria,Sofi Marinova,Love Unlimited,NA,11,45,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 2,10,Croatia,Nina Badrić,Nebo,NA,12,42,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 2,6,Portugal,Filipa Sousa,Vida minha,NA,13,39,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 2,12,Georgia,Anri Jokhadze,I'm a Joker,NA,14,36,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 2,3,Netherlands,Joan Franka,You and Me,NA,15,35,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 2,5,Belarus,Litesound,We Are the Heroes,NA,16,35,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 2,9,Slovenia,Eva Boto,Verjamem,NA,17,31,FALSE
+2012,Two semi-finals + Grand Final,Semi-final 2,15,Slovakia,Max Jason Mai,Don't Close Your Eyes,NA,18,22,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 1,5,Denmark,Emmelie de Forest,Only Teardrops,NA,1,167,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,6,Russia,Dina Garipova,What If,NA,2,156,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,7,Ukraine,Zlata Ognevich,Gravity,NA,3,140,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,12,Moldova,Aliona Moon,O mie,NA,4,95,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,15,Belgium,Roberto Bellarosa,Love Kills,NA,5,75,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,8,Netherlands,Anouk,Birds,NA,6,75,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,11,Belarus,Alyona Lanskaya,Solayoh,NA,7,64,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,13,Ireland,Ryan Dolan,Only Love Survives,NA,8,54,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,10,Lithuania,Andrius Pojavis,Something,NA,9,53,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,2,Estonia,Birgit,Et uus saaks alguse,NA,10,52,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 1,16,Serbia,Moje 3,Ljubav je svuda,NA,11,46,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 1,9,Montenegro,Who See,Igranka,NA,12,41,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 1,4,Croatia,Klapa s Mora,Mižerja,NA,13,38,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 1,1,Austria,Natália Kelly,Shine,NA,14,27,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 1,14,Cyprus,Despina Olympiou,An me thimasai,NA,15,11,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 1,3,Slovenia,Hannah,Straight into Love,NA,16,8,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 2,4,Azerbaijan,Farid Mammadov,Hold Me,NA,1,139,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,9,Greece,Koza Mostra feat. Agathon Iakovidis,Alcohol Is Free,NA,2,121,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,13,Norway,Margaret Berger,I Feed You My Love,NA,3,120,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,6,Malta,Gianluca,Tomorrow,NA,4,118,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,17,Romania,Cezar,It's My Life,NA,5,83,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,8,Iceland,Eythor Ingi,Ég á líf,NA,6,72,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,11,Armenia,Dorians,Lonely Planet,NA,7,69,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,12,Hungary,ByeAlex,"Kedvesem"" (Zoohacker Remix)",NA,8,66,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,5,Finland,Krista Siegfrids,Marry Me,NA,9,64,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,15,Georgia,Nodi Tatishvili and Sophie Gelovani,Waterfall,NA,10,63,TRUE
+2013,Two semi-finals + Grand Final,Semi-final 2,2,San Marino,Valentina Monetta,Crisalide (Vola),NA,11,47,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 2,7,Bulgaria,Elitsa Todorova and Stoyan Yankoulov,Samo shampioni,NA,12,45,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 2,16,Switzerland,Takasa,You and Me,NA,13,41,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 2,10,Israel,Moran Mazor,Rak Bishvilo,NA,14,40,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 2,14,Albania,Adrian Lulgjuraj and Bledar Sejko,Identitet,NA,15,31,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 2,3,Macedonia,Esma and Lozano,Pred da se razdeni,NA,16,28,FALSE
+2013,Two semi-finals + Grand Final,Semi-final 2,1,Latvia,PeR,Here We Go,NA,17,13,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 1,12,Russia,Polina Gagarina,A Million Voices,NA,1,182,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,3,Belgium,Loïc Nottet,Rhythm Inside,NA,2,149,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,7,Estonia,Elina Born and Stig Rästa,Goodbye to Yesterday,NA,3,105,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,16,Georgia,Nina Sublatti,Warrior,NA,4,98,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,15,Romania,Voltaj,De la capăt,NA,5,89,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,6,Greece,Maria Elena Kyriakou,One Last Breath,NA,6,81,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,2,Armenia,Genealogy,Face the Shadow,NA,7,77,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,10,Hungary,Boggie,Wars for Nothing,NA,8,67,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,9,Serbia,Bojana Stamenov,Beauty Never Lies,NA,9,63,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,14,Albania,Elhaida Dani,I'm Alive,NA,10,62,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 1,1,Moldova,Eduard Romanyuta,I Want Your Love,NA,11,41,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 1,11,Belarus,Uzari and Maimuna,Time,NA,12,39,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 1,13,Denmark,Anti Social Media,The Way You Are,NA,13,33,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 1,4,Netherlands,Trijntje Oosterhuis,Walk Along,NA,14,33,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 1,8,Macedonia,Daniel Kajmakoski,Autumn Leaves,NA,15,28,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 1,5,Finland,Pertti Kurikan Nimipäivät,Aina mun pitää,NA,16,13,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 2,13,Sweden,Måns Zelmerlöw,Heroes,NA,1,217,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,10,Latvia,Aminata,Love Injected,NA,2,155,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,9,Israel,Nadav Guedj,Golden Boy,NA,3,151,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,6,Norway,Mørland and Debrah Scarlett,A Monster Like Me,NA,4,123,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,16,Slovenia,Maraaya,Here for You,NA,5,92,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,15,Cyprus,John Karayiannis,One Thing I Should Have Done,NA,6,87,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,1,Lithuania,Monika Linkytė and Vaidas Baumila,This Time,NA,7,67,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,17,Poland,Monika Kuszyńska,In the Name of Love,NA,8,57,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,4,Montenegro,Knez,Adio,NA,9,57,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,11,Azerbaijan,Elnur Hüseynov,Hour of the Wolf,NA,10,53,TRUE
+2015,Two semi-finals + Grand Final,Semi-final 2,5,Malta,Amber,Warrior,NA,11,43,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 2,2,Ireland,Molly Sterling,Playing with Numbers,NA,12,35,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 2,8,Czech Republic,Marta Jandová and Václav Noid Bárta,Hope Never Dies,NA,13,33,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 2,7,Portugal,Leonor Andrade,Há um mar que nos separa,NA,14,19,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 2,12,Iceland,Maria Olafs,Unbroken,NA,15,14,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 2,3,San Marino,Anita Simoncini and Michele Perniola,Chain of Lights,NA,16,11,FALSE
+2015,Two semi-finals + Grand Final,Semi-final 2,14,Switzerland,Mélanie René,Time to Shine,NA,17,4,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 1,9,Russia,Sergey Lazarev,You Are the Only One,NA,1,342,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,7,Armenia,Iveta Mukuchyan,LoveWave,NA,2,243,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,18,Malta,Ira Losco,Walk on Water,NA,3,209,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,4,Hungary,Freddie,Pioneer,NA,4,197,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,6,Netherlands,Douwe Bob,Slow Down,NA,5,197,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,14,Azerbaijan,Samra,Miracle,NA,6,185,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,12,Austria,Zoë,Loin d'ici,NA,7,170,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,11,Cyprus,Minus One,Alter Ego,NA,8,164,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,10,Czech Republic,Gabriela Gunčíková,I Stand,NA,9,161,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,5,Croatia,Nina Kraljić,Lighthouse,NA,10,133,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 1,17,Bosnia and Herzegovina,Dalal and Deen feat. Ana Rucner and Jala,Ljubav je,NA,11,104,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 1,8,San Marino,Serhat,I Didn't Know,NA,12,68,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 1,15,Montenegro,Highway,The Real Thing,NA,13,60,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 1,16,Iceland,Greta Salóme,Hear Them Calling,NA,14,51,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 1,1,Finland,Sandhja,Sing It Away,NA,15,51,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 1,2,Greece,Argo,Utopian Land,NA,16,44,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 1,3,Moldova,Lidia Isac,Falling Stars,NA,17,33,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 1,13,Estonia,Jüri Pootsmann,Play,NA,18,24,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 2,10,Australia,Dami Im,Sound of Silence,NA,1,330,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,14,Ukraine,Jamala,1944,NA,2,287,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,18,Belgium,Laura Tesoro,What's the Pressure,NA,3,274,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,9,Lithuania,Donny Montell,I've Been Waiting for This Night,NA,4,222,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,12,Bulgaria,Poli Genova,If Love Was a Crime,NA,5,220,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,2,Poland,Michał Szpak,Color of Your Life,NA,6,151,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,4,Israel,Hovi Star,Made of Stars,NA,7,147,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,1,Latvia,Justs,Heartbeat,NA,8,132,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,16,Georgia,Nika Kocharov and Young Georgian Lolitaz,Midnight Gold,NA,9,123,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,6,Serbia,Sanja Vučić Zaa,Goodbye (Shelter),NA,10,105,TRUE
+2016,Two semi-finals + Grand Final,Semi-final 2,8,Macedonia,Kaliopi,Dona,NA,11,88,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 2,5,Belarus,Ivan,Help You Fly,NA,12,84,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 2,15,Norway,Agnete,Icebreaker,NA,13,63,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 2,11,Slovenia,ManuElla,Blue and Red,NA,14,57,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 2,7,Ireland,Nicky Byrne,Sunlight,NA,15,46,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 2,17,Albania,Eneda Tarifa,Fairytale,NA,16,45,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 2,13,Denmark,Lighthouse X,Soldiers of Love,NA,17,34,FALSE
+2016,Two semi-finals + Grand Final,Semi-final 2,3,Switzerland,Rykka,The Last of Our Kind,NA,18,28,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 1,9,Portugal,Salvador Sobral,Amar pelos dois,NA,1,370,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,12,Moldova,SunStroke Project,Hey Mamma,NA,2,291,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,1,Sweden,Robin Bengtsson,I Can't Go On,NA,3,227,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,5,Belgium,Blanche,City Lights,NA,4,165,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,15,Cyprus,Hovig,Gravity,NA,5,164,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,3,Australia,Isaiah,Don't Come Easy,NA,6,160,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,16,Armenia,Artsvik,Fly with Me,NA,7,152,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,8,Azerbaijan,Dihaj,Skeletons,NA,8,150,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,11,Poland,Kasia Moś,Flashlight,NA,9,119,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,10,Greece,Demy,This Is Love,NA,10,115,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 1,2,Georgia,Tamara Gachechiladze,Keep the Faith,NA,11,99,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 1,7,Finland,Norma John,Blackbird,NA,12,92,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 1,14,Czech Republic,Martina Bárta,My Turn,NA,13,83,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 1,4,Albania,Lindita,World,NA,14,76,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 1,13,Iceland,Svala,Paper,NA,15,60,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 1,6,Montenegro,Slavko Kalezić,Space,NA,16,56,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 1,17,Slovenia,Omar Naber,On My Way,NA,17,36,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 1,18,Latvia,Triana Park,Line,NA,18,21,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 2,15,Bulgaria,Kristian Kostov,Beautiful Mess,NA,1,403,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,7,Hungary,Joci Pápai,Origo,NA,2,231,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,18,Israel,Imri,I Feel Alive,NA,3,207,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,6,Netherlands,Og3ne,Lights and Shadows,NA,4,200,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,12,Norway,Jowst,Grab the Moment,NA,5,189,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,5,Romania,Ilinca feat. Alex Florea,Yodel It!,NA,6,174,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,2,Austria,Nathan Trent,Running on Air,NA,7,147,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,11,Croatia,Jacques Houdek,My Friend,NA,8,141,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,14,Belarus,Naviband,Story of My Life,NA,9,110,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,8,Denmark,Anja,Where I Am,NA,10,101,TRUE
+2017,Two semi-finals + Grand Final,Semi-final 2,1,Serbia,Tijana Bogićević,In Too Deep,NA,11,98,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 2,13,Switzerland,Timebelle,Apollo,NA,12,97,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 2,9,Ireland,Brendan Murray,Dying to Try,NA,13,86,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 2,17,Estonia,Koit Toome and Laura,Verona,NA,14,85,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 2,3,Macedonia,Jana Burčeska,Dance Alone,NA,15,69,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 2,4,Malta,Claudia Faniello,Breathlessly,NA,16,55,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 2,16,Lithuania,Fusedmarc,Rain of Revolution,NA,17,42,FALSE
+2017,Two semi-finals + Grand Final,Semi-final 2,10,San Marino,Valentina Monetta and Jimmie Wilson,Spirit of the Night,NA,18,1,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,7,Israel,Netta,Toy,NA,1,283,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,19,Cyprus,Eleni Foureira,Fuego,NA,2,262,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,5,Czech Republic,Mikolas Josef,Lie to Me,NA,3,232,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,13,Austria,Cesár Sampson,Nobody but You,NA,4,231,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,9,Estonia,Elina Nechayeva,La forza,NA,5,201,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,18,Ireland,Ryan O'Shaughnessy,Together,NA,6,179,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,10,Bulgaria,Equinox,Bones,NA,7,177,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,3,Albania,Eugent Bushpepa,Mall,NA,8,162,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,6,Lithuania,Ieva Zasimauskaitė,When We're Old,NA,9,119,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,15,Finland,Saara Aalto,Monsters,NA,10,108,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 1,1,Azerbaijan,Aisel,X My Heart,NA,11,94,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,4,Belgium,Sennek,A Matter of Time,NA,12,91,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,17,Switzerland,Zibbz,Stones,NA,13,86,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,14,Greece,Yianna Terzi,Oniro mou,NA,14,81,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,16,Armenia,Sevak Khanagyan,Qami,NA,15,79,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,8,Belarus,Alekseev,Forever,NA,16,65,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,12,Croatia,Franka,Crazy,NA,17,63,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,11,Macedonia,Eye Cue,Lost and Found,NA,18,24,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 1,2,Iceland,Ari Ólafsson,Our Choice,NA,19,15,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 2,1,Norway,Alexander Rybak,That's How You Write a Song,NA,1,266,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,15,Sweden,Benjamin Ingrosso,Dance You Off,NA,2,254,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,7,Moldova,DoReDoS,My Lucky Day,NA,3,235,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,9,Australia,Jessica Mauboy,We Got Love,NA,4,212,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,5,Denmark,Rasmussen,Higher Ground,NA,5,204,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,18,Ukraine,Mélovin,Under the Ladder,NA,6,179,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,8,Netherlands,Waylon,Outlaw in 'Em,NA,7,174,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,17,Slovenia,Lea Sirk,"Hvala, ne!",NA,8,132,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,3,Serbia,Sanja Ilić and Balkanika,Nova deca,NA,9,117,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,13,Hungary,AWS,Viszlát nyár,NA,10,111,TRUE
+2018,Two semi-finals + Grand Final,Semi-final 2,2,Romania,The Humans,Goodbye,NA,11,107,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 2,14,Latvia,Laura Rizzotto,Funny Girl,NA,12,106,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 2,12,Malta,Christabelle,Taboo,NA,13,101,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 2,11,Poland,Gromee feat. Lukas Meijer,Light Me Up,NA,14,81,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 2,6,Russia,Julia Samoylova,I Won't Break,NA,15,65,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 2,16,Montenegro,Vanja Radovanović,Inje,NA,16,40,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 2,4,San Marino,Jessika feat. Jenifer Brening,Who We Are,NA,17,28,FALSE
+2018,Two semi-finals + Grand Final,Semi-final 2,10,Georgia,Ethno-Jazz Band Iriao,For You,NA,18,24,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 1,12,Australia,Kate Miller-Heidke,Zero Gravity,NA,1,261,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,6,Czech Republic,Lake Malawi,Friend of a Friend,NA,2,242,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,13,Iceland,Hatari,Hatrið mun sigra,NA,3,221,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,14,Estonia,Victor Crone,Storm,NA,4,198,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,16,Greece,Katerine Duska,Better Love,NA,5,185,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,5,Slovenia,Zala Kralj and Gašper Šantl,Sebi,NA,6,167,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,9,Serbia,Nevena Božović,Kruna,NA,7,156,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,17,San Marino,Serhat,Say Na Na Na,NA,8,150,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,1,Cyprus,Tamta,Replay,NA,9,149,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,8,Belarus,Zena,Like It,NA,10,122,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 1,4,Poland,Tulia,Fire of Love (Pali się),NA,11,120,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 1,7,Hungary,Joci Pápai,Az én apám,NA,12,97,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 1,10,Belgium,Eliot,Wake Up,NA,13,70,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 1,11,Georgia,Oto Nemsadze,Keep On Going,NA,14,62,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 1,15,Portugal,Conan Osíris,Telemóveis,NA,15,51,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 1,2,Montenegro,D mol,Heaven,NA,16,46,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 1,3,Finland,Darude feat. Sebastian Rejman,Look Away,NA,17,23,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 2,16,Netherlands,Duncan Laurence,Arcade,NA,1,280,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,17,North Macedonia,Tamara Todevska,Proud,NA,2,239,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,8,Sweden,John Lundvik,Too Late for Love,NA,3,238,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,4,Switzerland,Luca Hänni,She Got Me,NA,4,232,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,18,Azerbaijan,Chingiz,Truth,NA,5,224,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,13,Russia,Sergey Lazarev,Scream,NA,6,217,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,15,Norway,Keiino,Spirit in the Sky,NA,7,210,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,11,Malta,Michela,Chameleon,NA,8,157,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,14,Albania,Jonida Maliqi,Ktheju tokës,NA,9,96,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,7,Denmark,Leonora,Love Is Forever,NA,10,94,TRUE
+2019,Two semi-finals + Grand Final,Semi-final 2,12,Lithuania,Jurij Veklenko,Run with the Lions,NA,11,93,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 2,3,Moldova,Anna Odobescu,Stay,NA,12,85,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 2,6,Romania,Ester Peony,On a Sunday,NA,13,71,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 2,10,Croatia,Roko,The Dream,NA,14,64,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 2,5,Latvia,Carousel,That Night,NA,15,50,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 2,1,Armenia,Srbuk,Walking Out,NA,16,49,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 2,9,Austria,Paenda,Limits,NA,17,21,FALSE
+2019,Two semi-finals + Grand Final,Semi-final 2,2,Ireland,Sarah McTernan,22,NA,18,16,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 1,16,Malta,Destiny,Je me casse,NA,1,325,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,15,Ukraine,Go_A,Shum,NA,2,267,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,3,Russia,Manizha,Russian Woman,NA,3,225,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,1,Lithuania,The Roop,Discoteque,NA,4,203,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,12,Israel,Eden Alene,Set Me Free,NA,5,192,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,8,Cyprus,Elena Tsagrinou,El Diablo,NA,6,170,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,4,Sweden,Tusse,Voices,NA,7,142,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,14,Azerbaijan,Efendi,Mata Hari,NA,8,138,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,11,Belgium,Hooverphonic,The Wrong Place,NA,9,117,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,9,Norway,Tix,Fallen Angel,NA,10,115,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 1,10,Croatia,Albina,Tick-Tock,NA,11,110,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 1,13,Romania,Roxen,Amnesia,NA,12,85,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 1,2,Slovenia,Ana Soklič,Amen,NA,13,44,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 1,5,Australia,Montaigne,Technicolour,NA,14,28,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 1,6,North Macedonia,Vasil,Here I Stand,NA,15,23,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 1,7,Ireland,Lesley Roy,Maps,NA,16,20,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 2,16,Switzerland,Gjon's Tears,Tout l'univers,NA,1,291,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,8,Iceland,Daði og Gagnamagnið,10 Years,NA,2,288,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,13,Bulgaria,Victoria,Growing Up Is Getting Old,NA,3,250,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,12,Portugal,The Black Mamba,Love Is on My Side,NA,4,239,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,14,Finland,Blind Channel,Dark Side,NA,5,234,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,4,Greece,Stefania,Last Dance,NA,6,184,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,7,Moldova,Natalia Gordienko,Sugar,NA,7,179,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,9,Serbia,Hurricane,Loco loco,NA,8,124,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,1,San Marino,Senhit,Adrenalina,NA,9,118,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,11,Albania,Anxhela Peristeri,Karma,NA,10,112,TRUE
+2021,Two semi-finals + Grand Final,Semi-final 2,17,Denmark,Fyr og Flamme,Øve os på hinanden,NA,11,89,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 2,5,Austria,Vincent Bueno,Amen,NA,12,66,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 2,2,Estonia,Uku Suviste,The Lucky One,NA,13,58,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 2,6,Poland,Rafał,The Ride,NA,14,35,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 2,3,Czech Republic,Benny Cristo,Omaga,NA,15,23,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 2,10,Georgia,Tornike Kipiani,You,NA,16,16,FALSE
+2021,Two semi-finals + Grand Final,Semi-final 2,15,Latvia,Samanta Tīna,The Moon Is Rising,NA,17,14,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 1,6,Ukraine,Kalush Orchestra,Stefania,NA,1,337,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,8,Netherlands,S10,De diepte,NA,2,221,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,15,Greece,Amanda Georgiadi Tenfjord,Die Together,NA,3,211,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,10,Portugal,Maro,"Saudade, saudade",NA,4,208,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,17,Armenia,Rosa Linn,Snap,NA,5,187,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,16,Norway,Subwoolfer,Give That Wolf a Banana,NA,6,177,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,3,Lithuania,Monika Liu,Sentimentai,NA,7,159,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,9,Moldova,Zdob și Zdub and Advahov Brothers,Trenulețul,NA,8,154,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,4,Switzerland,Marius Bear,Boys Do Cry,NA,9,118,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,14,Iceland,Systur,Með hækkandi sól,NA,10,103,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 1,11,Croatia,Mia Dimšić,Guilty Pleasure,NA,11,75,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 1,1,Albania,Ronela Hajati,Sekret,NA,12,58,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 1,12,Denmark,Reddi,The Show,NA,13,55,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 1,2,Latvia,Citi Zēni,Eat Your Salad,NA,14,55,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 1,13,Austria,Lumix feat. Pia Maria,Halo,NA,15,42,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 1,7,Bulgaria,Intelligent Music Project,Intention,NA,16,29,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 1,5,Slovenia,LPS,Disko,NA,17,15,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 2,17,Sweden,Cornelia Jakobs,Hold Me Closer,NA,1,396,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,8,Australia,Sheldon Riley,Not the Same,NA,2,243,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,3,Serbia,Konstrakta,In corpore sano,NA,3,237,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,18,Czech Republic,We Are Domi,Lights Off,NA,4,227,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,12,Estonia,Stefan,Hope,NA,5,209,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,14,Poland,Ochman,River,NA,6,198,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,1,Finland,The Rasmus,Jezebel,NA,7,162,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,16,Belgium,Jérémie Makiese,Miss You,NA,8,151,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,13,Romania,Wrs,Llámame,NA,9,118,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,4,Azerbaijan,Nadir Rustamli,Fade to Black,NA,10,96,TRUE
+2022,Two semi-finals + Grand Final,Semi-final 2,11,North Macedonia,Andrea,Circles,NA,11,76,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 2,9,Cyprus,Andromache,Ela,NA,12,63,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 2,2,Israel,Michael Ben David,I.M,NA,13,61,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 2,7,San Marino,Achille Lauro,Stripper,NA,14,50,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 2,10,Ireland,Brooke,That's Rich,NA,15,47,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 2,6,Malta,Emma Muscat,I Am What I Am,NA,16,47,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 2,15,Montenegro,Vladana,Breathe,NA,17,33,FALSE
+2022,Two semi-finals + Grand Final,Semi-final 2,5,Georgia,Circus Mircus,Lock Me In,NA,18,22,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 1,15,Finland,Käärijä,Cha Cha Cha,NA,1,177,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,11,Sweden,Loreen,Tattoo,NA,2,135,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,9,Israel,Noa Kirel,Unicorn,NA,3,127,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,13,Czechia,Vesna,My Sister's Crown,NA,4,110,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,10,Moldova,Pasha Parfeni,Soarele și luna,NA,5,109,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,1,Norway,Alessandra,Queen of Kings,NA,6,102,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,8,Switzerland,Remo Forrer,Watergun,NA,7,97,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,7,Croatia,Let 3,Mama ŠČ!,NA,8,76,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,5,Portugal,Mimicat,Ai coração,NA,9,74,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,3,Serbia,Luke Black,Samo mi se spava,NA,10,37,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 1,4,Latvia,Sudden Lights,Aijā,NA,11,34,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 1,6,Ireland,Wild Youth,We Are One,NA,12,10,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 1,14,Netherlands,Mia Nicolai and Dion Cooper,Burning Daylight,NA,13,7,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 1,12,Azerbaijan,TuralTuranX,Tell Me More,NA,14,4,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 1,2,Malta,The Busker,Dance (Our Own Party),NA,15,3,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 2,16,Australia,Voyager,Promise,NA,1,149,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,13,Austria,Teya and Salena,Who the Hell Is Edgar?,NA,2,137,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,9,Poland,Blanka,Solo,NA,3,124,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,15,Lithuania,Monika Linkytė,Stay,NA,4,110,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,10,Slovenia,Joker Out,Carpe Diem,NA,5,103,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,2,Armenia,Brunette,Future Lover,NA,6,99,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,6,Cyprus,Andrew Lambrou,Break a Broken Heart,NA,7,94,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,5,Belgium,Gustaph,Because of You,NA,8,90,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,14,Albania,Albina and Familja Kelmendi,Duje,NA,9,83,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,4,Estonia,Alika,Bridges,NA,10,74,TRUE
+2023,Two semi-finals + Grand Final,Semi-final 2,7,Iceland,Diljá,Power,NA,11,44,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 2,11,Georgia,Iru,Echo,NA,12,33,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 2,8,Greece,Victor Vernicos,What They Say,NA,13,14,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 2,1,Denmark,Reiley,Breaking My Heart,NA,14,6,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 2,3,Romania,Theodor Andrei,D.G.T. (Off and On),NA,15,0,FALSE
+2023,Two semi-finals + Grand Final,Semi-final 2,12,San Marino,Piqued Jacks,Like an Animal,NA,16,0,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 1,7,Croatia,Baby Lasagna,Rim Tim Tagi Dim,NA,1,177,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,5,Ukraine,Alyona Alyona and Jerry Heil,Teresa & Maria,NA,2,173,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,4,Ireland,Bambie Thug,Doomsday Blue,NA,3,124,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,3,Lithuania,Silvester Belt,Luktelk,NA,4,119,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,15,Luxembourg,Tali,Fighter,NA,5,117,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,1,Cyprus,Silia Kapsis,Liar,NA,6,67,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,10,Finland,Windows95man,No Rules!,NA,7,59,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,14,Portugal,Iolanda,Grito,NA,8,58,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,9,Slovenia,Raiven,Veronika,NA,9,51,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,2,Serbia,Teya Dora,Ramonda,NA,10,47,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 1,13,Australia,Electric Fields,One Milkali (One Blood),NA,11,41,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 1,6,Poland,Luna,The Tower,NA,12,35,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 1,11,Moldova,Natalia Barbu,In the Middle,NA,13,20,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 1,12,Azerbaijan,Fahree feat. Ilkin Dovlatov,Özünlə apar,NA,14,11,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 1,8,Iceland,Hera Björk,Scared of Heights,NA,15,3,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 2,14,Israel,Eden Golan,Hurricane,NA,1,194,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,16,Netherlands,Joost Klein,Europapa,NA,2,182,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,8,Armenia,Ladaniva,Jako,NA,3,137,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,4,Switzerland,Nemo,The Code,NA,4,132,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,3,Greece,Marina Satti,Zari,NA,5,86,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,13,Estonia,5miinust and Puuluup,(Nendest) narkootikumidest ei tea me (küll) midagi,NA,6,79,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,9,Latvia,Dons,Hollow,NA,7,72,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,11,Georgia,Nutsa Buzaladze,Firefighter,NA,8,54,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,6,Austria,Kaleen,We Will Rave,NA,9,46,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,15,Norway,Gåte,Ulveham,NA,10,43,TRUE
+2024,Two semi-finals + Grand Final,Semi-final 2,5,Czechia,Aiko,Pedestal,NA,11,38,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 2,7,Denmark,Saba,Sand,NA,12,36,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 2,12,Belgium,Mustii,Before the Party's Over,NA,13,18,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 2,10,San Marino,Megara,11:11,NA,14,16,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 2,2,Albania,Besa,Titan,NA,15,14,FALSE
+2024,Two semi-finals + Grand Final,Semi-final 2,1,Malta,Sarah Bonnici,Loop,NA,16,13,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 1,5,Ukraine,Ziferblat,Bird of Pray,NA,1,137,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,12,Albania,Shkodra Elektronike,Zjerm,NA,2,122,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,13,Netherlands,Claude,C'est la vie,NA,3,121,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,6,Sweden,KAJ,Bara bada bastu,NA,4,118,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,4,Estonia,Tommy Cash,Espresso Macchiato,NA,5,113,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,1,Iceland,Væb,Róa,NA,6,97,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,2,Poland,Justyna Steczkowska,Gaja,NA,7,85,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,8,Norway,Kyle Alessandro,Lighter,NA,8,82,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,7,Portugal,Napa,Deslocado,NA,9,56,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,11,San Marino,Gabry Ponte,Tutta l'Italia,NA,10,46,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 1,15,Cyprus,Theo Evan,Shh,NA,11,44,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 1,14,Croatia,Marko Bošnjak,Poison Cake,NA,12,28,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 1,3,Slovenia,Klemen,How Much Time Do We Have Left,NA,13,23,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 1,9,Belgium,Red Sebastian,Strobe Lights,NA,14,23,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 1,10,Azerbaijan,Mamagama,Run with U,NA,15,7,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 2,14,Israel,Yuval Raphael,New Day Will Rise,NA,1,203,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,4,Latvia,Tautumeitas,Bur man laimi,NA,2,130,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,16,Finland,Erika Vikman,Ich komme,NA,3,115,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,7,Greece,Klavdia,Asteromata,NA,4,112,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,6,Austria,JJ,Wasted Love,NA,5,104,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,8,Lithuania,Katarsis,Tavo akys,NA,6,103,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,13,Luxembourg,Laura Thorn,La poupée monte le son,NA,7,62,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,11,Denmark,Sissal,Hallucination,NA,8,61,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,9,Malta,Miriana Conte,Serving,NA,9,53,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,5,Armenia,Parg,Survivor,NA,10,51,TRUE
+2025,Two semi-finals + Grand Final,Semi-final 2,1,Australia,Go-Jo,Milkshake Man,NA,11,41,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 2,12,Czechia,Adonxs,Kiss Kiss Goodbye,NA,12,29,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 2,3,Ireland,Emmy,Laika Party,NA,13,28,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 2,15,Serbia,Princ,Mila,NA,14,28,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 2,10,Georgia,Mariam Shengelia,Freedom,NA,15,28,FALSE
+2025,Two semi-finals + Grand Final,Semi-final 2,2,Montenegro,Nina Žižić,Dobrodošli,NA,16,12,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 1,10,Israel,Noam Bettan,Michelle,NA,1,269,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,14,Poland,Alicja,Pray,NA,2,247,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,7,Finland,Linda Lampenius and Pete Parkkonen,Liekinheitin,NA,3,227,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,1,Moldova,Satoshi,"Viva, Moldova!",NA,4,208,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,15,Serbia,Lavina,Kraj mene,NA,5,187,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,3,Croatia,Lelek,Andromeda,NA,6,175,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,4,Greece,Akylas,Ferto,NA,7,159,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,12,Lithuania,Lion Ceccah,Sólo quiero más,NA,8,101,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,2,Sweden,Felicia,My System,NA,9,96,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,11,Belgium,Essyla,Dancing on the Ice,NA,10,91,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 1,9,Estonia,Vanilla Ninja,Too Epic to Be True,NA,11,79,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 1,5,Portugal,Bandidos do Cante,Rosa,NA,12,74,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 1,8,Montenegro,Tamara Živković,Nova zora,NA,13,71,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 1,13,San Marino,Senhit,Superstar,NA,14,41,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 1,6,Georgia,Bzikebi,On Replay,NA,15,5,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 2,1,Bulgaria,Dara,Bangaranga,NA,1,278,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,3,Romania,Alexandra Căpitănescu,Choke Me,NA,2,234,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,11,Australia,Delta Goodrem,Eclipse,NA,3,222,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,15,Norway,Jonas Lovv,Ya Ya Ya,NA,4,206,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,10,Denmark,Søren Torpegaard Lund,Før vi går hjem,NA,5,199,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,12,Ukraine,Leléka,Ridnym,NA,6,174,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,13,Albania,Alis,Nân,NA,7,158,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,14,Malta,Aidan,Bella,NA,8,143,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,5,Czechia,Daniel Zizka,Crossroads,NA,9,142,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,8,Cyprus,Antigoni,Jalla,NA,10,122,TRUE
+2026,Two semi-finals + Grand Final,Semi-final 2,7,Switzerland,Veronica Fusaro,Alice,NA,11,108,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 2,4,Luxembourg,Eva Marija,Mother Nature,NA,12,60,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 2,9,Latvia,Atvara,Ēnā,NA,13,49,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 2,6,Armenia,Simón,Paloma Rumba,NA,14,49,FALSE
+2026,Two semi-finals + Grand Final,Semi-final 2,2,Azerbaijan,Jiva,Just Go,NA,15,2,FALSE

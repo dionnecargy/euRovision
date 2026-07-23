@@ -1,0 +1,71 @@
+year,format,has_grand_final,has_semi_final_1,has_semi_final_2,has_relegation,n_live_shows
+1956,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1957,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1958,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1959,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1960,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1961,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1962,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1963,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1964,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1965,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1966,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1967,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1968,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1969,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1970,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1971,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1972,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1973,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1974,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1975,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1976,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1977,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1978,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1979,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1980,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1981,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1982,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1983,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1984,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1985,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1986,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1987,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1988,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1989,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1990,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1991,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1992,Grand Final only,TRUE,FALSE,FALSE,FALSE,1
+1993,Relegation qualifier + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+1994,Relegation rule + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+1995,Relegation rule + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+1996,Open qualifier round + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+1997,Rolling points relegation + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+1998,Rolling points relegation + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+1999,Rolling points relegation + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+2000,Rolling points relegation + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+2001,Rolling points relegation + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+2002,Rolling points relegation + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+2003,Rolling points relegation + Grand Final,TRUE,FALSE,FALSE,TRUE,1
+2004,One semi-final + Grand Final,TRUE,TRUE,FALSE,FALSE,2
+2005,One semi-final + Grand Final,TRUE,TRUE,FALSE,FALSE,2
+2006,One semi-final + Grand Final,TRUE,TRUE,FALSE,FALSE,2
+2007,One semi-final + Grand Final,TRUE,TRUE,FALSE,FALSE,2
+2008,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2009,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2010,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2011,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2012,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2013,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2014,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2015,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2016,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2017,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2018,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2019,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2021,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2022,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2023,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2024,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2025,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
+2026,Two semi-finals + Grand Final,TRUE,TRUE,TRUE,FALSE,3
