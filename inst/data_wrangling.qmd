@@ -20,7 +20,7 @@ broadcasts    <- read_csv(here("inst/extdata/eurovision_broadcasts.csv"))
 
 # Inspect Host Cities df
 
-Manual inspection and edits 
+Manual inspection and edits
 
 ```{r}
 host_cities <- host_cities %>% 
@@ -41,12 +41,12 @@ host_cities <- host_cities %>%
 # rewrite over 
 write_csv(host_cities, here("inst/extdata/eurovision_host_cities.csv"))
 ```
- 
-# Inspect Participants df 
+
+# Inspect Participants df
 
 Claude assistance for wrangling code
 
-## Contest Format 
+## Contest Format
 
 ```{r}
 # ── Contest Format Reference Data Frame ───────────────────────────────────────
@@ -98,15 +98,6 @@ df_contest_format <- tibble(
     )
   )
 
-# ── Preview ───────────────────────────────────────────────────────────────────
-print(df_contest_format, n = Inf)
-
-# ── Summary count by format ───────────────────────────────────────────────────
-cat("\n── Contests per format ──────────────────────────────────────────────────\n")
-df_contest_format |>
-  count(format, sort = FALSE) |>
-  print()
-
 # ── Save ──────────────────────────────────────────────────────────────────────
 write_csv(df_contest_format, here("inst/extdata/eurovision_contest_format.csv"))
 ```
@@ -154,10 +145,6 @@ df_participants_info <- raw |>
   mutate(year = as.integer(year)) |>
 
   arrange(year, country)
-
-cat(sprintf("df_participants_info: %d rows × %d cols\n",
-            nrow(df_participants_info), ncol(df_participants_info)))
-glimpse(df_participants_info)
 
 # rewrite 
 write_csv(df_participants_info, here("inst/extdata/eurovision_participants.csv"))
@@ -256,43 +243,341 @@ df_semifinal_results <- results_clean |>
 
   arrange(year, semi_final, place)
 
-cat(sprintf("df_semifinal_results: %d rows × %d cols\n",
-            nrow(df_semifinal_results), ncol(df_semifinal_results)))
-glimpse(df_semifinal_results)
-
-# ── Sanity checks ──────────────────────────────────────────────────────────────
-
-cat("\n── Semi-finals per year ─────────────────────────────────────────────────\n")
-df_semifinal_results |>
-  distinct(year, semi_final) |>
-  count(year, name = "n_semis") |>
-  print(n = Inf)
-
-cat("\n── 2004 semi-final results ───────────────────────────────────────────────\n")
-df_semifinal_results |>
-  filter(year == 2004) |>
-  select(country, running_order, place, points, qualified) |>
-  print(n = Inf)
-
-cat("\n── 2008 semi-final 1 results ─────────────────────────────────────────────\n")
-df_semifinal_results |>
-  filter(year == 2008, semi_final == "Semi-final 1") |>
-  select(country, running_order, place, points, qualified) |>
-  print(n = Inf)
-
 # ── Save ───────────────────────────────────────────────────────────────────────
 write_csv(df_semifinal_results, here("inst/extdata/eurovision_semifinal_results.csv"))
-cat("\nSaved: eurovision_semifinal_results.csv\n")
+```
+
+# Inspect Results df
+
+use claude to help remove the semi results from the final results etc
+
+also identify the number each country votes for another country ?
+
+Can you please clean this data frame using R tidyverse-friendly language so that we only have the grand final results for contests from 1956 to 2026. Please create two clear data frames: one that contains the total votes per song/country for each year, and another that outlines the number of votes given by each country for each song/country per year (if that information is available) - the latter would likely be a list of many data frames - one for each year. Once you have that list of many data frames, please join into one large data frame, separating each contest by year. 
+
+More importantly, separate by the table_label column. There are different "detailed voting results", "final", "semi-final", "semi-final allocation draw", "table" x. Please separate these accordingly and explain why these different tables exist. 
+
+Ideally, I would like the following data frames: 
+
+1. total votes for each semi final (eurovision_semifinal_results.csv) 
+2. total votes for the grand final
+3. votes per song for each semi final awarded by each country (a list of data frames per year)
+4. votes per song for each grand final awarded by each country (a list of data frames per year) 
+5. semi-final allocation draw data 
+
+Outline any data that we have but do not have a home for in these data frames.
+
+Notes: 
+- First Eurovision (1956): Detailed voting data is incomplete. Only aggregate results may be available.
+- Data Quality: EurovisionWorld is more reliable for historical data than Wikipedia's variable HTML structure.
+- Semi-Finals: Semi-final data is typically only available from 2004 onwards when the contest expanded to multiple shows.
+- Jury vs. Televote Split: From 2009 onwards, voting is split 50/50 between jury and public, making data more granular.
+
+table_label                       n
+results | Detailed voting results [1]	889	
+results | Detailed voting results [2]	337	
+results | Detailed voting results [3]	12	
+results | Final [10]	127	
+results | Final [11]	259	
+results | Final [12]	190	
+results | Final [13]	121	
+results | Final [15]	187	
+results | Final [16]	195	
+results | Final [17]	195	
+results | Final [18]	100	
+results | Final [19]	91	
+results | Final [1]	23	
+results | Final [2]	96	
+results | Final [4]	486	
+results | Final [5]	110	
+results | Final [6]	59	
+results | Final [9]	133	
+results | Semi-final 1 [2]	304	
+results | Semi-final 1 [5]	322	
+results | Semi-final 1 [6]	281	
+results | Semi-final 1 [7]	195	
+results | Semi-final 1 [8]	63	
+results | Semi-final 1 [9]	62	
+results | Semi-final 2 [10]	183	
+results | Semi-final 2 [11]	136	
+results | Semi-final 2 [12]	136	
+results | Semi-final 2 [13]	53	
+results | Semi-final 2 [14]	62	
+results | Semi-final 2 [3]	311	
+results | Semi-final 2 [7]	91	
+results | Semi-final 2 [8]	156	
+results | Semi-final 2 [9]	105	
+results | Semi-final [1]	98	
+results | Semi-final [3]	102	
+results | Semi-final [4]	53	
+results | Semi-final allocation draw [1]	18	
+results | table 1	14	
+results | table 2	14	
+results | table 3	17	
+results | table 4	5	
+
+## 1956 [Table 1, 2, 3, 4]
+
+We know: 
+- 1956 did not disclose votes per country or total. 
+- There were multiple songs per person but they only competed with one final song 
+
+```{r}
+results_1956 <- results %>% 
+  # filter table 1 
+  filter(table_label == "results | table 1") %>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.)))) %>% 
+  # known winner of the contest 
+  mutate(total_score = ifelse(artist == "Lys Assia" & song == '"Refrain"', 1, 0)) %>% 
+  # remove extra songs per artist 
+  mutate(
+    order_s = case_when(
+      song == '"De vogels van Holland"' ~ "1",
+      song ==	'"Das alte Karussell"' ~ "2",
+      song ==	'"Messieurs les noyés de la Seine"' ~ "3",
+      song == '"Im Wartesaal zum großen Glück"' ~ "4",
+      song == '"Le Temps perdu"' ~ "5",
+      song ==	'"Ne crois pas"' ~ "6",
+      song == '"Aprite le finestre"' ~ "7",
+      song == '"Voorgoed voorbij"' ~ "8",
+      song == '"Refrain"' ~ "9",
+      song == '"Le Plus Beau Jour de ma vie"' ~ "10",
+      song == '"So geht das jede Nacht"'~ "11",
+      song == '"Il est là"' ~ "12",
+      song == '"Les Amants de minuit"' ~ "13",
+      song == '"Amami se vuoi"' ~ "14",
+      .default = "check"
+    ),
+    order_s = as.numeric(order_s)
+  ) 
+
+# Table 2 is unnecessary as it only contains the order which we've just manually entered.
+# Table 3 and 4 contains the commentary information that is already in the 'broadcasts` df. 
+results_cleaned <- results %>% 
+  # remove table 1, 2, 3, 4 
+  filter(! str_detect(table_label, "table"))
+```
+
+## 1957-1995 [Detailed Results 1]
+
+```{r}
+results_1957_to_1995 <- results_cleaned %>% 
+  # filter Detailed voting results [1]
+  filter(table_label == "results | Detailed voting results [1]") %>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.)))) %>%
+  # remove table_label
+  select(-table_label) %>% 
+  # rename awful col name 
+  rename("total_score" = "supports_writing_mode_vertical_rl_mw_parser_output_ts_vertical_header_line_height_1_max_width_1em_padding_0_4em_vertical_align_bottom_width_1em_html_client_js_mw_parser_output_sortable_not_jquery_tablesorter_ts_vertical_header_not_unsortable_html_client_js_mw_parser_output_ts_vertical_header_header_sort_background_position_50_percent_4em_padding_right_0_4em_padding_top_21px_mw_parser_output_ts_vertical_header_is_valign_top_vertical_align_top_mw_parser_output_ts_vertical_header_is_valign_middle_vertical_align_middle_mw_parser_output_ts_vertical_header_is_normal_font_weight_normal_mw_parser_output_ts_vertical_header_display_inline_block_transform_rotate_180deg_writing_mode_vertical_rl_supports_writing_mode_sideways_lr_mw_parser_output_ts_vertical_header_transform_none_writing_mode_sideways_lr_total_score") %>% 
+  # filter years without NAs for x1 and x2 
+  filter(year %in% c(1957:1995))
+
+results_1957_to_1995_detailed <- results_1957_to_1995 %>% 
+  # remove totals and keep breakdown matricies 
+  dplyr::select(-c(total_score, starts_with("voting"), x1)) %>% 
+  # rename x2 to country 1 of matrix 
+  rename("performing_country" = x2) %>% 
+  # pivot countries 
+  pivot_longer(
+    cols = c(switzerland:ukraine), 
+    names_to = "voting_country", 
+    values_to = "score"
+  )
+# next step would be to add 0's if they were participants but received no votes, while NA if they did not participate and could not vote. 
+
+# results_1957_to_1995_final <- 
+  results_1957_to_1995 %>% 
+  # remove detailed results 
+  dplyr::select(-c(x1, switzerland:macedonia, latvia:ukraine))
 ```
 
 
-# Inspect Results df 
+```{r}
+results_clean <- results %>%
+  mutate(
+    table_type = case_when(
+      str_detect(table_label, "allocation draw") ~ "allocation_draw",
+      str_detect(table_label, "Detailed voting results") ~ "detailed_voting",
+      str_detect(table_label, "Final") ~ "final",
+      str_detect(table_label, "Semi-final [12]") ~ "semifinal_summary",
+      str_detect(table_label, "Semi-final \\d \\[") ~ "semifinal_detailed",
+      str_detect(table_label, "^results \\| table") ~ "legacy_table",
+      TRUE ~ "other"
+    ),
+    semi_final_number = case_when(
+      str_detect(table_label, "Semi-final 1") ~ 1L,
+      str_detect(table_label, "Semi-final 2") ~ 2L,
+      str_detect(table_label, "Semi-final 3") ~ 3L,
+      TRUE ~ NA_integer_
+    )
+  )
 
-use claude to help remove the semi results from the final results etc 
+country_cols <- results_clean %>%
+  select(where(is.numeric)) %>%
+  select(-year, -r_o, -n, -no, -points, -number, 
+         -starts_with("televote_"), -starts_with("jury_vote_"),
+         -starts_with("combined_"), -starts_with("rest_"), 
+         -semi_final_number) %>%
+  colnames()
 
-also identify the number each country votes for another country ? 
+# ============================================================================
+# EXTRACT VOTING DATA (LONG FORMAT) - FIXED
+# ============================================================================
+
+voting_data <- results_clean %>%
+  select(
+    year, table_label, table_type, country, 
+    song, semi_final_number, artist, 
+    all_of(country_cols)
+  ) %>%
+  pivot_longer(
+    cols = all_of(country_cols),
+    names_to = "country_voting",
+    values_to = "votes_awarded"
+  ) %>%
+  filter(!is.na(votes_awarded), votes_awarded > 0, !is.na(country)) %>%
+  mutate(
+    country_voting = str_to_title(str_replace_all(country_voting, "_", " ")),
+    country_performing = country
+  ) %>%
+  select(year, table_label, table_type, semi_final_number, 
+         country_performing, song, country_voting, votes_awarded)
+
+```
 
 ```{r}
-results
+
+head(voting_data, 20)
+cat("\n✓ Voting data created successfully!\n")
+cat("Rows:", nrow(voting_data), "\n")
+
+# ============================================================================
+# OUTPUT 1: SEMIFINAL TOTALS
+# ============================================================================
+
+eurovision_semifinal_totals <- voting_data %>%
+  filter(table_type %in% c("semifinal_summary", "other")) %>%
+  mutate(
+    semi_final_number = case_when(
+      !is.na(semi_final_number) ~ semi_final_number,
+      str_detect(table_label, "Semi-final 1") ~ 1L,
+      str_detect(table_label, "Semi-final 2") ~ 2L,
+      str_detect(table_label, "Semi-final 3") ~ 3L,
+      TRUE ~ NA_integer_
+    )
+  ) %>%
+  filter(!is.na(semi_final_number)) %>%
+  group_by(year, semi_final_number, song, country_performing) %>%
+  summarise(
+    total_votes = sum(votes_awarded, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  rename(country = country_performing) %>%
+  select(year, semi_final_number, song, country, total_votes) %>%
+  arrange(year, semi_final_number, desc(total_votes))
+
+head(eurovision_semifinal_totals, 20)
+cat("\nSemi-final totals rows:", nrow(eurovision_semifinal_totals), "\n")
+
+# ============================================================================
+# OUTPUT 2: FINAL TOTALS
+# ============================================================================
+
+eurovision_final_totals <- voting_data %>%
+  filter(table_type == "final") %>%
+  group_by(year, song, country_performing) %>%
+  summarise(
+    total_votes = sum(votes_awarded, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  rename(country = country_performing) %>%
+  select(year, song, country, total_votes) %>%
+  arrange(year, desc(total_votes))
+
+head(eurovision_final_totals, 20)
+cat("\nFinal totals rows:", nrow(eurovision_final_totals), "\n")
+
+# ============================================================================
+# OUTPUT 3: SEMIFINAL VOTING BY COUNTRY (LIST)
+# ============================================================================
+
+eurovision_semifinal_voting_by_country <- voting_data %>%
+  filter(table_type %in% c("semifinal_summary", "other")) %>%
+  mutate(
+    semi_final_number = case_when(
+      !is.na(semi_final_number) ~ semi_final_number,
+      str_detect(table_label, "Semi-final 1") ~ 1L,
+      str_detect(table_label, "Semi-final 2") ~ 2L,
+      str_detect(table_label, "Semi-final 3") ~ 3L,
+      TRUE ~ NA_integer_
+    )
+  ) %>%
+  filter(!is.na(semi_final_number)) %>%
+  select(year, semi_final_number, song, country_performing, 
+         country_voting, votes_awarded) %>%
+  arrange(year, semi_final_number) %>%
+  nest(data = -year) %>%
+  deframe()
+
+cat("\nSemi-final voting by country: list with", 
+    length(eurovision_semifinal_voting_by_country), "years\n")
+if (length(eurovision_semifinal_voting_by_country) > 0) {
+  head(eurovision_semifinal_voting_by_country[[1]], 15)
+}
+
+# ============================================================================
+# OUTPUT 4: FINAL VOTING BY COUNTRY (LIST)
+# ============================================================================
+
+eurovision_final_voting_by_country <- voting_data %>%
+  filter(table_type == "final") %>%
+  select(year, song, country_performing, country_voting, votes_awarded) %>%
+  arrange(year) %>%
+  nest(data = -year) %>%
+  deframe()
+
+cat("\nFinal voting by country: list with", 
+    length(eurovision_final_voting_by_country), "years\n")
+if (length(eurovision_final_voting_by_country) > 0) {
+  head(eurovision_final_voting_by_country[[1]], 15)
+}
+
+# ============================================================================
+# OUTPUT 5: SEMIFINAL ALLOCATION DRAW
+# ============================================================================
+
+eurovision_semifinal_allocation_draw <- results_clean %>%
+  filter(table_type == "allocation_draw") %>%
+  select(year, country, semi_final_assigned = semi_final_number, 
+         broadcaster, language) %>%
+  filter(!is.na(semi_final_assigned), !is.na(country)) %>%
+  arrange(year, semi_final_assigned, country)
+
+head(eurovision_semifinal_allocation_draw, 20)
+cat("\nSemi-final allocation draw rows:", nrow(eurovision_semifinal_allocation_draw), "\n")
+
+# ============================================================================
+# DATA QUALITY CHECKS
+# ============================================================================
+
+cat("\n\n=== DATA QUALITY REPORT ===\n\n")
+
+cat("📈 SUMMARY STATISTICS:\n")
+cat("✓ Semi-final totals:", nrow(eurovision_semifinal_totals), "rows\n")
+cat("✓ Final totals:", nrow(eurovision_final_totals), "rows\n")
+cat("✓ Semi-final voting years:", length(eurovision_semifinal_voting_by_country), "\n")
+cat("✓ Final voting years:", length(eurovision_final_voting_by_country), "\n")
+cat("✓ Allocation draw entries:", nrow(eurovision_semifinal_allocation_draw), "\n")
+
+```
+
+# Inspect new df
+
+```{r}
+df_contest_format     <- read_csv(here("inst/extdata/eurovision_contest_format.csv"))
+df_participants_info  <- read_csv(here("inst/extdata/eurovision_participants.csv"))
+df_semifinal_results  <- read_csv(here("inst/extdata/eurovision_semifinal_results.csv"))
 ```
 
