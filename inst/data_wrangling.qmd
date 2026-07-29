@@ -356,7 +356,9 @@ results_1956 <- results %>%
 # Table 3 and 4 contains the commentary information that is already in the 'broadcasts` df. 
 results_cleaned <- results %>% 
   # remove table 1, 2, 3, 4 
-  filter(! str_detect(table_label, "table"))
+  filter(!str_detect(table_label, "table")) %>% 
+  # rename awful col name 
+  rename("total_score_1" = "supports_writing_mode_vertical_rl_mw_parser_output_ts_vertical_header_line_height_1_max_width_1em_padding_0_4em_vertical_align_bottom_width_1em_html_client_js_mw_parser_output_sortable_not_jquery_tablesorter_ts_vertical_header_not_unsortable_html_client_js_mw_parser_output_ts_vertical_header_header_sort_background_position_50_percent_4em_padding_right_0_4em_padding_top_21px_mw_parser_output_ts_vertical_header_is_valign_top_vertical_align_top_mw_parser_output_ts_vertical_header_is_valign_middle_vertical_align_middle_mw_parser_output_ts_vertical_header_is_normal_font_weight_normal_mw_parser_output_ts_vertical_header_display_inline_block_transform_rotate_180deg_writing_mode_vertical_rl_supports_writing_mode_sideways_lr_mw_parser_output_ts_vertical_header_transform_none_writing_mode_sideways_lr_total_score")
 ```
 
 ## 1957-1995 [Detailed Results 1]
@@ -369,14 +371,12 @@ results_1957_to_1995 <- results_cleaned %>%
   select(where(~!all(is.na(.)))) %>%
   # remove table_label
   select(-table_label) %>% 
-  # rename awful col name 
-  rename("total_score" = "supports_writing_mode_vertical_rl_mw_parser_output_ts_vertical_header_line_height_1_max_width_1em_padding_0_4em_vertical_align_bottom_width_1em_html_client_js_mw_parser_output_sortable_not_jquery_tablesorter_ts_vertical_header_not_unsortable_html_client_js_mw_parser_output_ts_vertical_header_header_sort_background_position_50_percent_4em_padding_right_0_4em_padding_top_21px_mw_parser_output_ts_vertical_header_is_valign_top_vertical_align_top_mw_parser_output_ts_vertical_header_is_valign_middle_vertical_align_middle_mw_parser_output_ts_vertical_header_is_normal_font_weight_normal_mw_parser_output_ts_vertical_header_display_inline_block_transform_rotate_180deg_writing_mode_vertical_rl_supports_writing_mode_sideways_lr_mw_parser_output_ts_vertical_header_transform_none_writing_mode_sideways_lr_total_score") %>% 
-  # filter years without NAs for x1 and x2 
+# filter years without NAs for x1 and x2 
   filter(year %in% c(1957:1995))
 
 results_1957_to_1995_detailed <- results_1957_to_1995 %>% 
   # remove totals and keep breakdown matricies 
-  dplyr::select(-c(total_score, starts_with("voting"), x1)) %>% 
+  dplyr::select(-c(total_score_1, starts_with("voting"), x1)) %>% 
   # rename x2 to country 1 of matrix 
   rename("performing_country" = x2) %>% 
   # pivot countries 
@@ -388,9 +388,45 @@ results_1957_to_1995_detailed <- results_1957_to_1995 %>%
 # next step would be to add 0's if they were participants but received no votes, while NA if they did not participate and could not vote. 
 
 # results_1957_to_1995_final <- 
-  results_1957_to_1995 %>% 
-  # remove detailed results 
-  dplyr::select(-c(x1, switzerland:macedonia, latvia:ukraine))
+  # results_1957_to_1995 %>% 
+  # # remove detailed results 
+  # dplyr::select(-c(x1, switzerland:macedonia, latvia:ukraine)) %>% 
+  # # identify what's in the voting procedue columns
+  # select(where(~!all(is.na(.))))
+
+# 1997 to 2003 
+results_1997_to_2003_1 <- results_cleaned %>% 
+  # filter Detailed voting results [1]
+  filter(table_label == "results | Detailed voting results [1]") %>% 
+  select(year, total_score_1, starts_with("voting")) %>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.)))) %>% 
+  # filter so we can see where there ARE values in these columns
+  filter(!(
+    is.na(voting_procedure_used_100_percent_jury_vote_100_percent_televoting_1) &
+    is.na(voting_procedure_used_100_percent_televoting_100_percent_jury_vote_1) & 
+    is.na(voting_procedure_used_100_percent_televoting_100_percent_jury_vote_2)
+  )) %>% 
+  # they appear to be misaligned data 
+  rename(
+    x1 = voting_procedure_used_100_percent_jury_vote_100_percent_televoting_1,
+    x2 = voting_procedure_used_100_percent_jury_vote_100_percent_televoting_2, 
+    x3 = voting_procedure_used_100_percent_televoting_100_percent_jury_vote_1,
+    x4 = voting_procedure_used_100_percent_televoting_100_percent_jury_vote_2
+  ) %>% 
+  # remove unneccessary columns
+  select(-c(x1, x3)) %>% 
+  # join x2 and x4 together
+  mutate(performing_country = coalesce(x2, x4)) %>% 
+  # remove old cols
+  select(-c(x2, x4))
+
+results_1997_to_2003_voting <- results_1997_to_2003_1 %>%
+  # filter for voting procedure used data
+  filter(str_detect(performing_country, "Voting"))
+
+results_1997_to_2003_1 %>% 
+  filter(!str_detect(performing_country, "Voting"))
 ```
 
 
