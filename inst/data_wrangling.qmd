@@ -1,7 +1,13 @@
 ---
-title: "data_wrangling"
+title: "Data Wrangling"
 format: html
 ---
+
+To Do: 
+[] Add place and total score to participants df 
+[] Make results df in long format 
+[] Make all df country names lower case
+[] Create function to make country names sentence case with and as lower case for visualisation
 
 ```{r}
 library(tidyverse)
@@ -350,21 +356,64 @@ results_1956 <- results %>%
       .default = "check"
     ),
     order_s = as.numeric(order_s)
-  ) 
+  )  %>% 
+  # lower case performing_country var too 
+  mutate(country = str_to_lower(str_replace_all(country, " ", "_"))) %>% 
+  # add col re final or semi
+  mutate(str = "final")
 
+write_csv(results_1956, here("inst/extdata/eurovision_1956.csv"))
+```
+
+## Results -> Clean
+
+```{r}
 # Table 2 is unnecessary as it only contains the order which we've just manually entered.
 # Table 3 and 4 contains the commentary information that is already in the 'broadcasts` df. 
 results_cleaned <- results %>% 
   # remove table 1, 2, 3, 4 
   filter(!str_detect(table_label, "table")) %>% 
   # rename awful col name 
-  rename("total_score_1" = "supports_writing_mode_vertical_rl_mw_parser_output_ts_vertical_header_line_height_1_max_width_1em_padding_0_4em_vertical_align_bottom_width_1em_html_client_js_mw_parser_output_sortable_not_jquery_tablesorter_ts_vertical_header_not_unsortable_html_client_js_mw_parser_output_ts_vertical_header_header_sort_background_position_50_percent_4em_padding_right_0_4em_padding_top_21px_mw_parser_output_ts_vertical_header_is_valign_top_vertical_align_top_mw_parser_output_ts_vertical_header_is_valign_middle_vertical_align_middle_mw_parser_output_ts_vertical_header_is_normal_font_weight_normal_mw_parser_output_ts_vertical_header_display_inline_block_transform_rotate_180deg_writing_mode_vertical_rl_supports_writing_mode_sideways_lr_mw_parser_output_ts_vertical_header_transform_none_writing_mode_sideways_lr_total_score")
+  rename("total_score_1" = "supports_writing_mode_vertical_rl_mw_parser_output_ts_vertical_header_line_height_1_max_width_1em_padding_0_4em_vertical_align_bottom_width_1em_html_client_js_mw_parser_output_sortable_not_jquery_tablesorter_ts_vertical_header_not_unsortable_html_client_js_mw_parser_output_ts_vertical_header_header_sort_background_position_50_percent_4em_padding_right_0_4em_padding_top_21px_mw_parser_output_ts_vertical_header_is_valign_top_vertical_align_top_mw_parser_output_ts_vertical_header_is_valign_middle_vertical_align_middle_mw_parser_output_ts_vertical_header_is_normal_font_weight_normal_mw_parser_output_ts_vertical_header_display_inline_block_transform_rotate_180deg_writing_mode_vertical_rl_supports_writing_mode_sideways_lr_mw_parser_output_ts_vertical_header_transform_none_writing_mode_sideways_lr_total_score") %>% 
+  # lower case performing_country var too 
+  mutate(
+    country = str_to_lower(str_replace_all(country, " ", "_")),
+    x2 = str_to_lower(str_replace_all(x2, " ", "_"))
+  )
 ```
 
 ## 1957-1995 [Detailed Results 1]
 
+### Function: clean_matrix
+
 ```{r}
-results_1957_to_1995 <- results_cleaned %>% 
+clean_matrix <- function(df){
+
+  df %>% 
+    # remove columns that are only NA 
+    select(where(~ !all(is.na(.x)))) %>% 
+    # pivot countries 
+    pivot_longer(
+      cols = -c(year, performing_country), 
+      names_to = "voting_country", 
+      values_to = "score"
+    ) %>% 
+    # # group by year 
+    # group_by(year) %>%
+    # # keep only rows where the country appears as both a performer and a voter that year
+    # filter(performing_country %in% voting_country, voting_country %in% performing_country) %>% 
+    # ungroup
+    # ungroup() %>% 
+    # replace NA with 0 
+    replace_na(replace = list(score = 0))
+  
+}
+```
+
+### Data processing 
+
+```{r}
+results_1957_to_1995_filter <- results_cleaned %>% 
   # filter Detailed voting results [1]
   filter(table_label == "results | Detailed voting results [1]") %>% 
   # remove NA columns 
@@ -374,61 +423,601 @@ results_1957_to_1995 <- results_cleaned %>%
 # filter years without NAs for x1 and x2 
   filter(year %in% c(1957:1995))
 
-results_1957_to_1995_detailed <- results_1957_to_1995 %>% 
+results_1957_to_1995_detailed <-
+  results_1957_to_1995_filter %>% 
   # remove totals and keep breakdown matricies 
   dplyr::select(-c(total_score_1, starts_with("voting"), x1)) %>% 
   # rename x2 to country 1 of matrix 
-  rename("performing_country" = x2) %>% 
-  # pivot countries 
-  pivot_longer(
-    cols = c(switzerland:ukraine), 
-    names_to = "voting_country", 
-    values_to = "score"
-  )
-# next step would be to add 0's if they were participants but received no votes, while NA if they did not participate and could not vote. 
+  rename("performing_country" = x2) %>%
+  # apply clean matrix
+  clean_matrix() %>% 
+  # remove anomaly in 1982 vote structure matrix
+  filter(!c(year==1982 & is.na(performing_country)))
 
-# results_1957_to_1995_final <- 
-  # results_1957_to_1995 %>% 
-  # # remove detailed results 
-  # dplyr::select(-c(x1, switzerland:macedonia, latvia:ukraine)) %>% 
-  # # identify what's in the voting procedue columns
-  # select(where(~!all(is.na(.))))
-
-# 1997 to 2003 
-results_1997_to_2003_1 <- results_cleaned %>% 
-  # filter Detailed voting results [1]
-  filter(table_label == "results | Detailed voting results [1]") %>% 
-  select(year, total_score_1, starts_with("voting")) %>% 
-  # remove NA columns 
+results_1957_to_1995_total <- results_1957_to_1995_filter %>%
+  # rename x2 to country 1 of matrix 
+  rename("performing_country" = x2) %>%
+  # remove detailed results
+  select(-c(x1, switzerland:macedonia, latvia:ukraine)) %>%
+  # identify what's in the voting procedue columns
   select(where(~!all(is.na(.)))) %>% 
-  # filter so we can see where there ARE values in these columns
-  filter(!(
-    is.na(voting_procedure_used_100_percent_jury_vote_100_percent_televoting_1) &
-    is.na(voting_procedure_used_100_percent_televoting_100_percent_jury_vote_1) & 
-    is.na(voting_procedure_used_100_percent_televoting_100_percent_jury_vote_2)
-  )) %>% 
-  # they appear to be misaligned data 
-  rename(
-    x1 = voting_procedure_used_100_percent_jury_vote_100_percent_televoting_1,
-    x2 = voting_procedure_used_100_percent_jury_vote_100_percent_televoting_2, 
-    x3 = voting_procedure_used_100_percent_televoting_100_percent_jury_vote_1,
-    x4 = voting_procedure_used_100_percent_televoting_100_percent_jury_vote_2
+  # rename score
+  rename(total_score = total_score_1)
+
+# join back to one table
+results_1957_to_1995 <- results_1957_to_1995_detailed %>% 
+  # pivot wider again 
+  pivot_wider(
+    id_cols = c(year, performing_country),
+    names_from = voting_country,
+    values_from = score
   ) %>% 
-  # remove unneccessary columns
-  select(-c(x1, x3)) %>% 
-  # join x2 and x4 together
-  mutate(performing_country = coalesce(x2, x4)) %>% 
-  # remove old cols
-  select(-c(x2, x4))
-
-results_1997_to_2003_voting <- results_1997_to_2003_1 %>%
-  # filter for voting procedure used data
-  filter(str_detect(performing_country, "Voting"))
-
-results_1997_to_2003_1 %>% 
-  filter(!str_detect(performing_country, "Voting"))
+  # join total score
+  left_join(results_1957_to_1995_total, by = c("year", "performing_country")) %>% 
+  # add col re final or semi
+  mutate(str = "final")
 ```
 
+### Add place 
+
+```{r}
+results_1957_to_1995 <- results_1957_to_1995 %>% 
+  # group by year 
+  group_by(year) %>% 
+  # calculate place
+  mutate(place = min_rank(desc(as.numeric(total_score)))) %>% 
+  # ungroup 
+  ungroup() %>% 
+  # reorder
+  select(year, performing_country, total_score, place, everything()) 
+
+write_csv(results_1957_to_1995, here("inst/extdata/eurovision_1957_to_1995.csv"))
+```
+
+## 1996
+
+Tables: 
+
+1. results | Final [1] - final results with total points and place 
+2. Detailed voting results [2] - detailed matrix of qualifying round votes
+3. Detailed voting results [3] - distribution of 12 points awarded at qualifying round 
+4. results | Final [4] - detailed matrix of final votes 
+5. results | Final [5] - distribution of 12 points awarded at final
+
+The distribution of 12 points is unnecessary as this can be obtained from the matrix
+
+```{r}
+results_1996_filter <- results_cleaned %>% 
+  # filter to 1996
+  filter(year == "1996") %>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.))))
+```
+
+### Qualifying
+
+```{r}
+results_1996_detailed_qual <- results_1996_filter %>% 
+  # filter for qualifying matrix 
+  filter(table_label == "results | Detailed voting results [2]") %>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.)))) %>% 
+  # remove totals and keep breakdown matricies 
+  dplyr::select(-c(total_score_1, table_label, x1)) %>% 
+  # rename x2 to country 1 of matrix 
+  rename("performing_country" = x2) %>%
+  # apply clean matrix
+  clean_matrix()
+
+results_1996_total_qual <- results_1996_filter %>%
+  # filter for qualifying matrix 
+  filter(table_label == "results | Detailed voting results [2]") %>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.)))) %>% 
+  # keep only relevant cols
+  select(year, performing_country = x2, total_score = total_score_1) 
+
+# join back to one table
+results_1996_qual <- results_1996_detailed_qual %>% 
+  # pivot wider again 
+  pivot_wider(
+    id_cols = c(year, performing_country),
+    names_from = voting_country,
+    values_from = score
+  ) %>% 
+  # join total score
+  left_join(results_1996_total_qual, by = c("year", "performing_country")) %>% 
+  # reorder
+  select(year, performing_country, total_score, everything()) %>% 
+  # add col re final or semi
+  mutate(str = "qual")
+```
+
+### Final
+
+```{r}
+results_1996_points <- results_1996_filter %>% 
+  # filter to appropriate table 
+  filter(table_label == "results | Final [1]")%>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.)))) %>% 
+  # remove unnecessary cols 
+  select(year, performing_country = country, total_score = points, place)
+
+results_1996_detailed_final <- results_1996_filter %>% 
+  # filter to appropriate table 
+  filter(table_label == "results | Final [4]")%>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.)))) %>% 
+  # remove totals and keep breakdown matricies 
+  dplyr::select(-c(table_label, total_score, x1)) %>% 
+  # rename x2 to country 1 of matrix 
+  rename("performing_country" = x2) %>%
+  # apply clean matrix
+  clean_matrix()
+
+results_1996_total_final <- results_1996_filter %>%
+  # filter for qualifying matrix 
+  filter(table_label == "results | Final [4]")%>% 
+  # remove NA columns 
+  select(where(~!all(is.na(.)))) %>% 
+  # keep only relevant cols
+  select(year, performing_country = x2, total_score) 
+
+# join back to one table
+results_1996_final <- results_1996_detailed_final %>% 
+  # pivot wider again 
+  pivot_wider(
+    id_cols = c(year, performing_country),
+    names_from = voting_country,
+    values_from = score
+  ) %>% 
+  # join total score
+  left_join(results_1996_total_final, by = c("year", "performing_country")) %>% 
+  # reorder
+  select(year, performing_country, total_score, everything()) %>% 
+  # add col re final or semi
+  mutate(str = "final", total_score = as.numeric(total_score))
+
+results_1996 <- results_1996_points %>% 
+  # join
+  left_join(results_1996_final, by = c("year", "performing_country", "total_score"))
+
+write_csv(results_1996, here("inst/extdata/eurovision_1996.csv"))
+```
+
+### 12 points
+
+Distribution of 12 points 
+
+```{r}
+# results_1996_filter %>% 
+#   filter(table_label == "results | Detailed voting results [3]")%>% 
+#   # remove NA columns 
+#   select(where(~!all(is.na(.))))
+# results_1996_filter %>% 
+#   filter(table_label == "results | Final [5]")%>% 
+#   # remove NA columns 
+#   select(where(~!all(is.na(.))))
+```
+
+## 1997-2003
+
+Two key data frames: 
+
+1. Detailed voting results [1]: voting matrix
+2. Detailed voting results [2]: distribution of 12 points awarded
+
+Important note about 1997:
+
+For the first time however, as part of a trial held by the contest organisers, televoting was used to determine the points from five of the participating countries.[5][38] In these countries viewers had a total of five minutes to register their vote by calling one of twenty-four different telephone numbers to represent the twenty-five competing entries except that which represented their own country. Once the voting phone lines were opened following the performance of the last competing entry, a video recap containing short clips of each competing entry with the accompanying phone number for voting was shown in order to aid viewers during the voting window.[40] In those countries which opted to use televoting to determine their points a jury was still required which would function as a back-up in case technical failure prevented the televote results from being used. The composition of the back-up juries in these countries was identical to the juries in the other countries with regards to profession, gender and age.[41]
+
+100% televoting: Austria, Switzerland, Germany, Sweden, United Kingdom
+100% jury voting: Cyprus, Turkey, Norway, Ireland, Slovenia, Netherlands, Italy, Spain, Poland, Estonia, Bosnia and Herzegovina, Portugal, Greece, Malta, Hungary, Russia, Denmark, France, Croatia, Iceland 
+
+```{r}
+results_1997_to_2003_filter <- results_cleaned %>% 
+  # filter for years between 1997 to 2003
+  filter(year %in% c(1997:2003))
+
+results_1997_to_2003_filter %>% 
+  summarise(n = n(), .by = "table_label")
+```
+
+### Data processing
+
+```{r}
+results_1997_to_2003_filter_1 <- results_1997_to_2003_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Detailed voting results [1]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.)))) %>% 
+  # remove unnecessary cols
+  select(
+    -c(
+      table_label, x1,
+      voting_procedure_used_100_percent_jury_vote_100_percent_televoting_1, 
+      voting_procedure_used_100_percent_televoting_100_percent_jury_vote_1
+    )
+  ) %>% 
+  # filter where total score is NA (it's the column that outlines voting procedure used 
+  # but when scraped from online it didn't capture the coloured boxes)
+  filter(!is.na(total_score_1)) %>% 
+  # rename percent voting cols
+  rename(
+    voting_jury_televote_1 = voting_procedure_used_100_percent_jury_vote_100_percent_televoting_2,
+    voting_jury_televote_2 = voting_procedure_used_100_percent_televoting_100_percent_jury_vote_2,
+    total_score = total_score_1
+  ) %>% 
+  # join all performing_country cols together 
+  unite("performing_country", c(voting_jury_televote_1, voting_jury_televote_2, x2)) %>% 
+  # remove na characters
+  mutate(
+    performing_country = gsub("_NA", "", performing_country),
+    performing_country = gsub("NA_", "", performing_country),
+    performing_country = str_to_lower(str_replace_all(performing_country, " ", "_")),
+    total_score = as.numeric(total_score),
+    str = "final"
+  ) 
+
+results_1997_to_2003_detailed <- 
+  results_1997_to_2003_filter_1 %>%
+  # remove cols
+  select(-c(total_score, str)) %>% 
+  # apply clean matrix
+  clean_matrix() 
+
+results_1997_to_2003 <- results_1997_to_2003_filter_1 %>% 
+  # select cols
+  select(year, performing_country, total_score, str) %>% 
+  # join to clean detailed long format from matrix
+  left_join(
+    results_1997_to_2003_detailed %>% 
+            # pivot wider again 
+      pivot_wider(
+        id_cols = c(year, performing_country),
+        names_from = voting_country,
+        values_from = score
+      ) , by = c("year", "performing_country")
+    ) %>% 
+  # ungroup
+  ungroup() %>% 
+  # group by year 
+  group_by(year) %>% 
+  # calculate place
+  mutate(place = min_rank(desc(as.numeric(total_score)))) %>% 
+  # ungroup 
+  ungroup() %>% 
+  # reorder
+  select(year, performing_country, total_score, place, everything()) 
+
+write_csv(results_1997_to_2003, here("inst/extdata/eurovision_1997_to_2003.csv"))
+```
+
+### Add voting type 
+
+Manual entry of which countries were jury and which were televote
+
+Separate df for now
+
+```{r}
+# results_1997_to_2003 %>% 
+#   mutate(
+#     voting_str = case_when(
+#       # before doing this, restructure so that it remains a long df 
+#       # change format for all above as well 
+#       # add cols to above years so that voting_str == "jury_100"
+#       # then manually go through each of these years and state jury_100 or televote_100
+#       # years beyond will be a mix of proportions with jury_televote e.g. jury_50_televote_50
+#     )
+#   )
+```
+
+
+## 2004-X
+
+1. Semi-final [1]: 
+2. Final [2]: 
+3. Semi-final [3]: 
+4. Semi-final [4]: 
+5. Final [5]: 
+6. Final [6]: 
+
+```{r}
+results_2004_to_2007_filter <- results_cleaned %>% 
+  # filter for years between 2004 to 2007
+  filter(year %in% c(2004:2007)) 
+
+results_2004_to_2007_filter %>% 
+  summarise(n = n(), .by = c("table_label", "year"))
+```
+
+### Tables 
+
+```{r}
+# table 1: semi final songs - unnecessary
+results_2004_to_2007_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Semi-final [1]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 2: songs in final - unnecessary
+results_2004_to_2007_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Final [2]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 3: semi-final scoring 
+results_2004_to_2007_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Semi-final [3]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 4: semi-final scoring 12 points - unnecessary
+results_2004_to_2007_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Semi-final [4]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 5: final scoring
+results_2004_to_2007_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Final [5]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 6: final scoring 12 points - unnecessary
+results_2004_to_2007_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Final [6]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+```
+
+### Qualifying
+
+```{r}
+results_2004_to_2007_filter_qual_1 <- results_2004_to_2007_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Semi-final [3]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.)))) %>% 
+  # remove unnecessary cols
+  select(
+    -c(
+      table_label,
+      voting_procedure_used_100_percent_televoting_100_percent_jury_vote_1
+    )
+  ) %>% 
+  # filter where total score is NA (it's the column that outlines voting procedure used 
+  # but when scraped from online it didn't capture the coloured boxes)
+  filter(!is.na(total_score_1)) %>% 
+  # rename percent voting cols
+  rename(
+    performing_country = voting_procedure_used_100_percent_televoting_100_percent_jury_vote_2,
+    total_score = total_score_1
+  ) %>% 
+  # adjust cols
+  mutate(
+    performing_country = str_to_lower(str_replace_all(performing_country, " ", "_")),
+    total_score = as.numeric(total_score),
+    str = "qual"
+  ) 
+
+results_2004_to_2007_detailed_qual <- 
+  results_2004_to_2007_filter_qual_1 %>%
+  # remove cols
+  select(-c(total_score, str)) %>% 
+  # apply clean matrix
+  clean_matrix() 
+
+results_2004_to_2007_qual <- results_2004_to_2007_filter_qual_1 %>% 
+  # select cols
+  select(year, performing_country, total_score, str) %>% 
+  # join to clean detailed long format from matrix
+  left_join(
+    results_2004_to_2007_detailed_qual %>% 
+            # pivot wider again 
+      pivot_wider(
+        id_cols = c(year, performing_country),
+        names_from = voting_country,
+        values_from = score
+      ) , by = c("year", "performing_country")
+    ) %>% 
+  # ungroup
+  ungroup() %>% 
+  # group by year 
+  group_by(year) %>% 
+  # calculate place
+  mutate(place = min_rank(desc(as.numeric(total_score)))) %>% 
+  # ungroup 
+  ungroup() %>% 
+  # reorder
+  select(year, performing_country, total_score, place, everything()) 
+```
+
+### Final
+
+```{r}
+results_2004_to_2007_filter_final_1 <- results_2004_to_2007_filter %>% 
+  # filter to appropriate table
+  filter(table_label == "results | Final [5]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.)))) %>% 
+  # remove unnecessary cols
+  select(
+    -c(
+      table_label,
+      voting_procedure_used_100_percent_televoting_100_percent_jury_vote_1,
+      voting_procedure_used_100_percent_televoting_1
+    )
+  ) %>% 
+  # filter where total score is NA (it's the column that outlines voting procedure used 
+  # but when scraped from online it didn't capture the coloured boxes)
+  filter(!is.na(total_score)) %>% 
+  # join all performing_country cols together 
+  unite(
+    "performing_country", 
+    c(
+      voting_procedure_used_100_percent_televoting_100_percent_jury_vote_2, 
+      voting_procedure_used_100_percent_televoting_2
+    ) 
+  ) %>% 
+  # remove na characters
+  mutate(
+    performing_country = gsub("_NA", "", performing_country),
+    performing_country = gsub("NA_", "", performing_country),
+    performing_country = str_to_lower(str_replace_all(performing_country, " ", "_")),
+    total_score = as.numeric(total_score),
+    str = "final"
+  ) 
+
+results_2004_to_2007_detailed_final <- 
+  results_2004_to_2007_filter_final_1 %>%
+  # remove cols
+  select(-c(total_score, str)) %>% 
+  # apply clean matrix
+  clean_matrix() 
+
+results_2004_to_2007_final <- results_2004_to_2007_filter_final_1 %>% 
+  # select cols
+  select(year, performing_country, total_score, str) %>% 
+  # join to clean detailed long format from matrix
+  left_join(
+    results_2004_to_2007_detailed_final %>% 
+            # pivot wider again 
+      pivot_wider(
+        id_cols = c(year, performing_country),
+        names_from = voting_country,
+        values_from = score
+      ) , by = c("year", "performing_country")
+    ) %>% 
+  # ungroup
+  ungroup() %>% 
+  # group by year 
+  group_by(year) %>% 
+  # calculate place
+  mutate(place = min_rank(desc(as.numeric(total_score)))) %>% 
+  # ungroup 
+  ungroup() %>% 
+  # reorder
+  select(year, performing_country, total_score, place, everything()) 
+```
+
+## 2008-2026
+
+Known: 
+
+- qualification now termed as semi-final 1 and semi-final 2
+- 2020 eurovision did not occur 
+- 2024 Joost Klein was disqualified from grand final 
+
+```{r}
+results_2008_to_2026_filter <- results_cleaned %>% 
+  # filter for years between 1997 to 2003
+  filter(year %in% c(2008:2026)) 
+
+results_2008_to_2026_filter %>% 
+  summarise(n = n(), .by = "table_label")
+
+results_2008_to_2026_filter %>% 
+  summarise(years = paste0(sort(unique(year)), collapse = ", "), .by = "table_label") 
+```
+
+results | Semi-final allocation draw [1]: every year 
+results | Semi-final 1 [2]:  every year 
+results | Semi-final 2 [3]:  every year 
+results | Final [4]:  every year 
+results | Semi-final 1 [5]:  every year 
+results | Semi-final 1 [6]:  every year 
+-
+results | Semi-final 2 [7]: 
+results | Semi-final 2 [8]: 
+results | Final [9]: 
+results | Final [10]: 
+results | Final [11]: 
+-
+results | Semi-final 1 [7]: 
+results | Semi-final 2 [9]: 
+results | Semi-final 2 [10]: 
+results | Final [12]: 
+results | Final [13]: 
+-
+results | Semi-final 1 [8]: 
+results | Semi-final 1 [9]: 
+results | Semi-final 2 [11]: 
+results | Semi-final 2 [12]: 
+results | Semi-final 2 [13]: 
+results | Semi-final 2 [14]: 
+results | Final [15]: 
+results | Final [16]: 
+results | Final [17]: 
+results | Final [18]: 
+results | Final [19]: 
+
+### Tables
+
+```{r}
+# table 1: allocation of semi-finals (2008-2026) - unnecessary 
+results_2008_to_2026_filter %>% 
+  # filter for table 
+  filter(table_label=="results | Semi-final allocation draw [1]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 2: semi-final 1: songs, artist, overall points and placing - unnecessary 
+results_2008_to_2026_filter %>% 
+  # filter for table 
+  filter(table_label=="results | Semi-final 1 [2]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 3: semi-final 2: songs, artist, overall points and placing - unnecessary 
+results_2008_to_2026_filter %>% 
+  # filter for table 
+  filter(table_label=="results | Semi-final 2 [3]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 4: final: songs, artist, overall points and placing - unnecessary 
+results_2008_to_2026_filter %>% 
+  # filter for table 
+  filter(table_label=="results | Final [4]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+
+# table 5: 
+results_2008_to_2026_filter %>% 
+  # filter for table 
+  filter(table_label=="results | Semi-final 1 [5]") %>% 
+  # remove NA columns
+  select(where(~!all(is.na(.))))
+```
+
+### Semi-final 1
+
+```{r}
+
+```
+
+### Semi-final 2
+
+```{r}
+
+```
+
+### Final 
+
+```{r}
+
+```
+
+
+## Other 
 
 ```{r}
 results_clean <- results %>%
